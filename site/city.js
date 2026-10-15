@@ -117,7 +117,8 @@
       color: '#eab486',
       url: 'https://centralsaloon.com/events/',
       icon: 'https://www.google.com/s2/favicons?domain=centralsaloon.com&sz=128',
-      feed: { kind: 'jsonld', url: 'https://centralsaloon.com/events/' }, // Modern Events Calendar; TM KovZpZA1kaJA is empty
+      // Modern Events Calendar list: its JSON-LD has the dates but no clocks, so the cards are read (date span + time span); TM KovZpZA1kaJA is empty
+      feed: { kind: 'cards', url: 'https://centralsaloon.com/events/', item: /<article class="mec-event-article/, title: /class="mec-event-title"><a[^>]*href="([^"]+)"[^>]*>([^<]+)</, when: /mec-start-date-label">([^<]+)<\/span>[\s\S]{0,800}?mec-start-time">([^<]+)</ },
       alias: /central saloon/i,
     },
     'Seattle Jazz Fellowship': { // 109 S Washington St — the listening room, five nights a week; Squarespace
