@@ -73,6 +73,10 @@
  *                which folds by alias or into `groundsVenue` like any city-wide feed; `type` is the
  *                rows' default type. Also a room's own `feed` (the Central Saloon's Modern Events
  *                Calendar list, whose JSON-LD has dates but no clocks).
+ *                `time` is the clock for cards that print none.
+ *   nps         — the National Park Service events API for one park (`parkCode=`; NPS_API_KEY in
+ *                the environment, else the data.gov DEMO_KEY): one row per listed date at the
+ *                first start time (Klondike Gold Rush NHP's Seattle unit, Pioneer Square 2026-10-15).
  *
  * Also here: the empty-list gate every build runs (`emptyListGate`) — a
  * fresh pull with zero upcoming events is a scouting failure or an outage,
@@ -664,26 +668,45 @@ export function cardDates(text, today = new Date()) {
     if (guess < now - 31 * 86400e3) y += 1;
   }
   const rest = t.slice(m.index + m[0].length);
-  const clock = /(\d{1,2})(?::(\d{2}))?\s*([ap])\.?m\b/i.exec(rest) || /(\d{1,2})(?::(\d{2}))?\s*([ap])\.?m\b/i.exec(t);
-  const time = clock ? `${String((Number(clock[1]) % 12) + (clock[3].toLowerCase() === 'p' ? 12 : 0)).padStart(2, '0')}:${clock[2] || '00'}` : '';
+  const time = cardClock(rest) || cardClock(t);
   const start = Date.UTC(y, mo1 - 1, Number(d1));
   const end = d2 ? Date.UTC(y, mo2 - 1, Number(d2)) : start;
   const out = [];
   for (let d = start; d <= end && out.length < 7; d += 86400e3) out.push({ date: new Date(d).toISOString().slice(0, 10), time });
   return out;
 }
+/**
+ * The first clock in a card's text, 24-hour. A range whose start carries no meridiem
+ * ("5:30‑7 pm", "10‑12 pm", "12–8 pm") borrows the end's, flipped when that would put
+ * the start after the end (10‑12 pm is 10 in the morning; 5:30‑7 pm is half past five).
+ */
+export function cardClock(text) {
+  const t = String(text || '');
+  const to24 = (h, mm, ap) => `${String((Number(h) % 12) + (ap.toLowerCase() === 'p' ? 12 : 0)).padStart(2, '0')}:${mm || '00'}`;
+  const range = /(\d{1,2})(?::(\d{2}))?\s*(?:([ap])\.?m\.?)?\s*[-–‑—]\s*(\d{1,2})(?::(\d{2}))?\s*([ap])\.?m\b/i.exec(t);
+  const single = /(\d{1,2})(?::(\d{2}))?\s*([ap])\.?m\b/i.exec(t);
+  if (range && (!single || range.index <= single.index)) {
+    const [, h1, m1, ap1, h2, m2, ap2] = range;
+    if (ap1) return to24(h1, m1, ap1);
+    const end = to24(h2, m2, ap2); let start = to24(h1, m1, ap2);
+    if (start > end) start = to24(h1, m1, ap2.toLowerCase() === 'p' ? 'a' : 'p');
+    return start;
+  }
+  return single ? to24(single[1], single[2], single[3]) : '';
+}
 /** The cards of a listing page → feed events (see the header). */
-export function parseCards(html, { item, title, when, place, venue, drop, type, types, base = '' } = {}) {
+export function parseCards(html, { item, title, when, place, venue, drop, type, types, base = '', time: defaultTime = '' } = {}) {
   const out = [];
   for (const card of String(html || '').split(item).slice(1)) {
     const tm = title.exec(card); const wm = when.exec(card);
     if (!tm || !wm) continue;
-    const name = decode(tm[2]); const url = decode(tm[1]);
+    const name = decode(tm[2].replace(/<[^>]+>/g, ' ')).replace(/\s+/g, ' ').trim(); const url = decode(tm[1]); // a title may wrap a tag or two (Waterfront Park's no-widow spans)
     if (!name || (drop && drop.test(name))) continue;
     const pm = place && place.exec(card);
     const room = venue || (pm && decode(pm[1])) || '';
     let href = url; try { href = new URL(url, base || 'https://localhost/').href; } catch { /* keep as written */ }
-    for (const { date, time } of cardDates(wm.slice(1).filter(Boolean).join(' '))) { // every group of `when` — a date and a clock in separate spans
+    for (const { date, time: clock } of cardDates(wm.slice(1).filter(Boolean).map((x) => x.replace(/<[^>]+>/g, ' ')).join(' '))) { // tags inside a date too ("Jan 2,<span>&nbsp;</span>2027")
+      const time = clock || defaultTime; // `time`: the clock a listing never prints (the art walk is 5 to 8 every first Thursday) // every group of `when` — a date and a clock in separate spans
       const ev = { venue: room, title: name, date, time, url: href };
       if (type && (!types || types.includes(type))) ev.type = type;
       out.push(ev);
@@ -694,12 +717,45 @@ export function parseCards(html, { item, title, when, place, venue, drop, type, 
 async function fetchCards(url, ua, label, opts) {
   const { feed = {}, venue, types, defaultType, drop } = opts;
   const html = await fetchText(url, ua);
-  const evs = parseCards(html, { item: feed.item, title: feed.title, when: feed.when, place: feed.place, venue, drop: drop || feed.drop, type: feed.type || defaultType, types, base: url });
+  const evs = parseCards(html, { item: feed.item, title: feed.title, when: feed.when, place: feed.place, venue, drop: drop || feed.drop, type: feed.type || defaultType, types, base: url, time: feed.time });
   console.log(`${label} (cards): ${evs.length} events from ${Math.max(0, String(html).split(feed.item).length - 1)} cards`);
   return evs;
 }
 
-const KINDS = { tribe: fetchTribe, ics: fetchIcs, tusboletos: fetchTusboletos, jsonld: fetchJsonLd, ticketera: fetchTicketera, icsfile: fetchIcsFile, linked: fetchLinked, squarespace: fetchSquarespace, cards: fetchCards };
+// ---- the National Park Service's events API ----
+/**
+ * developer.nps.gov/api/v1/events?parkCode=…: each item carries `dates` (one or many,
+ * ISO), `times` ({ timestart "01:00 PM" }), `location`, `infourl` and an eventid. One row per
+ * date at the first start time. The key is NPS_API_KEY in the environment, else the data.gov
+ * DEMO_KEY (a few dozen calls a day — one build a day is well inside it).
+ */
+const clock12 = (t) => { const m = /(\d{1,2}):(\d{2})\s*([AP])M/i.exec(t || ''); return m ? `${String((Number(m[1]) % 12) + (m[3].toUpperCase() === 'P' ? 12 : 0)).padStart(2, '0')}:${m[2]}` : ''; };
+export function mapNpsEvents(data, { venue, drop, type, types, label = 'feed' } = {}) {
+  const out = [];
+  for (const it of data?.data || []) {
+    const title = decode(it.title || '');
+    if (!title || (drop && drop.test(title))) continue;
+    const time = it.isallday === 'true' ? '' : clock12(it.times?.[0]?.timestart);
+    const url = it.infourl || `https://www.nps.gov/planyourvisit/event-details.htm?id=${it.eventid || it.id}`;
+    for (const date of it.dates || []) {
+      const ev = { venue: venue || decode(it.location || '') || label, title, date, time, url };
+      if (type && (!types || types.includes(type))) ev.type = type;
+      out.push(ev);
+    }
+  }
+  return out;
+}
+async function fetchNps(url, ua, label, opts) {
+  const { feed = {}, venue, types, defaultType, drop } = opts;
+  const u = new URL(url); if (!u.searchParams.get('api_key')) u.searchParams.set('api_key', process.env.NPS_API_KEY || 'DEMO_KEY');
+  const res = await fetch(u, { headers: { 'User-Agent': ua, Accept: 'application/json' } });
+  if (!res.ok) { console.error(`${label} HTTP ${res.status}`); return []; }
+  const evs = mapNpsEvents(await res.json(), { venue, drop: drop || feed.drop, type: feed.type || defaultType, types, label });
+  console.log(`${label} (NPS events): ${evs.length} events`);
+  return evs;
+}
+
+const KINDS = { tribe: fetchTribe, ics: fetchIcs, tusboletos: fetchTusboletos, jsonld: fetchJsonLd, ticketera: fetchTicketera, icsfile: fetchIcsFile, linked: fetchLinked, squarespace: fetchSquarespace, cards: fetchCards, nps: fetchNps };
 
 /**
  * One source thunk per city.js venue with a `feed` (its listings pinned to that row) and one per

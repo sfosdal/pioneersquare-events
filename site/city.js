@@ -106,6 +106,7 @@
       url: 'https://babayagaseattle.com/events',
       icon: 'https://www.google.com/s2/favicons?domain=babayagaseattle.com&sz=128',
       tm: { id: 'rZ7HnEZ17jbAS', match: 'baba yaga', fallbackUrl: 'https://babayagaseattle.com/events' },
+      // no soldOut tag: its TicketWeb pages answer 506 to a plain fetch and a bare page to a browser-impersonating one (2026-10-15), so there is no status to read
       // the bar's own site says "we are updating our events" (SpotHopper, empty API); ma.to's venue page carries the weekly nights as schema.org Events
       feed: { kind: 'jsonld', url: 'https://ma.to/venue/babayagaseattle', drop: /taco tuesday/i },
       alias: /baba yaga/i,
@@ -161,6 +162,25 @@
       feed: { kind: 'tribe', url: 'https://www.downtownseattle.org/wp-json/tribe/events/v1/events?venue=53729' },
       alias: /occidental (square|park)/i,
     },
+    "Owl 'n Thistle": { // 808 Post Ave — the Irish pub with music most nights; its site prints a weekly schedule, no dates, so the build writes the week out (fetch-events.mjs)
+      capacity: 100,
+      type: 'concert',
+      cssVar: '--v-owl',
+      color: '#b8ea86',
+      url: 'https://owlnthistle.com/live-music-schedule',
+      icon: 'https://www.google.com/s2/favicons?domain=owlnthistle.com&sz=128',
+      alias: /owl ?'?n'? ?thistle/i,
+    },
+    'Klondike Gold Rush NHP': { // 319 2nd Ave S — the National Park Service's Seattle unit, in the Cadillac Hotel: ranger talks, Living Voices
+      capacity: 100,
+      type: 'community',
+      cssVar: '--v-klondike',
+      color: '#eac786',
+      url: 'https://www.nps.gov/klse/planyourvisit/calendar.htm',
+      icon: 'https://www.google.com/s2/favicons?domain=www.nps.gov&sz=128',
+      feed: { kind: 'nps', url: 'https://developer.nps.gov/api/v1/events?parkCode=klse' },
+      alias: /klondike|cadillac hotel/i,
+    },
     'Around Pioneer Square': { // everything else the Alliance's neighbourhood calendar lists — galleries, museums, walks, pop-ups (groundsVenue)
       capacity: 500,
       type: 'community',
@@ -202,6 +222,19 @@
       tm: { id: 'KovZpZAFFE7A', match: 'wamu', fallbackUrl: 'https://www.wamutheater.com/', exclude: /amplified access|parking/i },
       alias: /wamu theat/i,
     },
+    'Waterfront Park': { // Pier 62 and the new park along Alaskan Way, a ten-minute walk west — Friends of Waterfront Park's tours, films, dances and markets, from the cards on its events page
+      capacity: 2000,
+      type: 'community',
+      cssVar: '--v-waterfront',
+      color: '#86c9ea',
+      area: 'town',
+      url: 'https://waterfrontparkseattle.org/events/',
+      icon: 'https://www.google.com/s2/favicons?domain=waterfrontparkseattle.org&sz=128',
+      feed: { kind: 'cards', url: 'https://waterfrontparkseattle.org/events/',
+        item: /<div class="grid-item"/, title: /<a href="([^"]+)">[\s\S]*?<h4 class="widont ">([\s\S]*?)<\/h4>/,
+        when: /<h3 class="widont ">([\s\S]*?)<\/h3><h3 class="widont date-time">([^<]*)<\/h3>/ },
+      alias: /waterfront park|pier 62/i,
+    },
     'Showbox SoDo': { // AEG's 1,800-cap room on 1st Ave S; box office on AXS, read from showboxpresents.com (Ticketmaster has only resale)
       capacity: 1800,
       area: 'town',
@@ -222,10 +255,13 @@
     { kind: 'cards', label: 'Alliance for Pioneer Square', url: 'https://pioneersquare.org/events/', type: 'community',
       item: /<div class="grid-item"/, title: /<h3><a href="([^"]+)">([^<]+)<\/a>/, when: /<strong>([^<]+)<\/strong>/, place: /<\/strong><\/p>\s*<p>([^<]*)<\/p>/,
       drop: /office hours/i }, // the Alliance's own drop-in hours are not events
+    // First Thursday Art Walk — the Alliance lists each month's walk on its own page, dated but with no clock (5 to 8 PM every first Thursday)
+    { kind: 'cards', label: 'First Thursday Art Walk', url: 'https://pioneersquare.org/art-walks/', type: 'arts', time: '17:00',
+      item: /<div class="grid-item"/, title: /<h3><a href="([^"]+)">([^<]+)<\/a>/, when: /<strong>([^<]+)<\/strong>/ },
   ];
 
   // The filter panel's starting state: every room on, nothing off.
-  var DEFAULT_ON = ['Baba Yaga', 'Central Saloon', 'Seattle Jazz Fellowship', 'Trinity Nightclub', 'Nordo', 'Occidental Square', 'Around Pioneer Square', 'Lumen Field', 'T-Mobile Park', 'WAMU Theater', 'Showbox SoDo'];
+  var DEFAULT_ON = ['Baba Yaga', 'Central Saloon', 'Seattle Jazz Fellowship', 'Trinity Nightclub', 'Nordo', 'Occidental Square', "Owl 'n Thistle", 'Klondike Gold Rush NHP', 'Around Pioneer Square', 'Lumen Field', 'T-Mobile Park', 'WAMU Theater', 'Showbox SoDo', 'Waterfront Park'];
   var DEFAULT_OFF = [];
   var PREFS_KNOWN_FROM = null; // no default-off venue yet, so nothing for saved prefs to be told about
 
@@ -242,20 +278,23 @@
   // order and a code is a bitmask over it, so the list is APPEND-ONLY —
   // adding an entry adds a bit and every existing code keeps meaning what
   // it meant; removing or reordering one changes every link out there.
-  // 25 slots from the first build: five base-36 digits.
-  var CODE_LENGTH = 5;
+  // 25 slots from the first build, three rooms appended the same afternoon (28): six base-36 digits
+  // (five hold 25 bits; the 26th needs the sixth).
+  var CODE_LENGTH = 6;
   var REGISTRY = [
     ['venue', 'Baba Yaga'], ['venue', 'Central Saloon'], ['venue', 'Seattle Jazz Fellowship'], ['venue', 'Trinity Nightclub'], ['venue', 'Nordo'], ['venue', 'Occidental Square'], ['venue', 'Around Pioneer Square'],
     ['venue', 'Lumen Field'], ['venue', 'T-Mobile Park'], ['venue', 'WAMU Theater'], ['venue', 'Showbox SoDo'],
     ['badge', 'concert'], ['badge', 'sports'], ['badge', 'arts'], ['badge', 'community'],
     ['team', 'seahawks'], ['team', 'mariners'], ['team', 'kraken'], ['team', 'storm'], ['team', 'reign'], ['team', 'sounders'],
     ['cap', 'stadium'], ['cap', 'arena'], ['cap', 'hall'], ['cap', 'room'],
+    // appended 2026-10-15 afternoon (the registry is append-only: old share codes keep their meaning)
+    ['venue', "Owl 'n Thistle"], ['venue', 'Klondike Gold Rush NHP'], ['venue', 'Waterfront Park'],
   ];
 
   var WORDS = {
     teamCity: 'Seattle', // the board drops it from the clubs' names ("Seattle Kraken" → Kraken)
     presetDefault: 'Every room — Pioneer Square and the stadiums — every team and type',
-    presetNeighborhood: 'Pioneer Square only — Baba Yaga, the Central, the Jazz Fellowship, Trinity, Nordo, Occidental Square',
+    presetNeighborhood: 'Pioneer Square only — Baba Yaga, the Central, the Jazz Fellowship, Trinity, Nordo, the Owl, Klondike, Occidental Square',
     presetBig: 'Only the places that hold 2,000 or more — Lumen Field, T-Mobile Park and WAMU',
     phrases: { all: 'Showing everything.', none: 'Showing nothing yet — open Filter and pick some venues.', neighborhood: 'Showing Pioneer Square only.', big: 'Showing the big rooms only — the stadiums and WAMU.' },
   };

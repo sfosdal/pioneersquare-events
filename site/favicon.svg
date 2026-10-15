@@ -1,7 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="6" fill="#1b2733"/>
-  <!-- stylized Space Needle -->
-  <ellipse cx="16" cy="10" rx="9" ry="3.2" fill="#e8791d"/>
-  <circle cx="16" cy="7.2" r="2.2" fill="#e8791d"/>
-  <path d="M14.6 13 L13 27 h6 L17.4 13 Z" fill="#edf1f4"/>
+  <rect width="32" height="32" rx="6" fill="#9e2e2e"/>
+  <!-- the Pioneer Square pergola: an arched iron-and-glass roof on slender posts -->
+  <path d="M4 12.5 Q16 8.5 28 12.5 V14.5 H4 Z" fill="#edf1f4"/>
+  <path d="M7 11.2 Q16 8.2 25 11.2" fill="none" stroke="#edf1f4" stroke-width="1.1" stroke-linecap="round"/>
+  <rect x="15.2" y="6.2" width="1.6" height="3.2" rx=".6" fill="#edf1f4"/>
+  <rect x="6.2" y="14.5" width="1.6" height="11" fill="#edf1f4"/>
+  <rect x="12.4" y="14.5" width="1.6" height="11" fill="#edf1f4"/>
+  <rect x="18" y="14.5" width="1.6" height="11" fill="#edf1f4"/>
+  <rect x="24.2" y="14.5" width="1.6" height="11" fill="#edf1f4"/>
+  <path d="M7.8 14.5 l2 2.2 M12.4 14.5 l-2 2.2 M14 14.5 l2 2.2 M18 14.5 l-2 2.2 M19.6 14.5 l2 2.2 M24.2 14.5 l-2 2.2" fill="none" stroke="#edf1f4" stroke-width=".9" stroke-linecap="round"/>
+  <rect x="4" y="25.5" width="24" height="1.8" rx=".6" fill="#edf1f4"/>
 </svg>

@@ -1,9 +1,11 @@
 # Pioneer Square Events
 
 Event feed and calendar for Pioneer Square, Seattle — Baba Yaga, the Central
-Saloon, the Seattle Jazz Fellowship, Trinity Nightclub, Nordo, Occidental
-Square and the Alliance for Pioneer Square's neighbourhood calendar, with
-Lumen Field, T-Mobile Park, WAMU Theater and Showbox SoDo a few blocks south
+Saloon, the Seattle Jazz Fellowship, Trinity Nightclub, Nordo, Owl 'n
+Thistle, Klondike Gold Rush NHP, Occidental Square (March to the Match before
+every Sounders home game) and the Alliance for Pioneer Square's neighbourhood
+calendar and First Thursday Art Walk, with Lumen Field, T-Mobile Park, WAMU
+Theater, Showbox SoDo and Waterfront Park a few blocks south and west
 — plus the Seattle clubs' seasons (Seahawks, Mariners, Kraken, Storm, Reign,
 Sounders) in the Teams view.
 
@@ -38,6 +40,12 @@ node --test scripts/*.test.mjs
 Sources: Ticketmaster by venue id (Baba Yaga, Lumen Field, T-Mobile Park,
 WAMU), Showbox Presents (Showbox SoDo), the rooms' own calendars through
 `scripts/feeds.mjs` (schema.org events, Squarespace collections, Eventbrite
-links, The Events Calendar REST) and the Alliance for Pioneer Square's
-server-rendered calendar (`cards`), folded into `Around Pioneer Square` unless
-the room has a row of its own. ESPN, MLB and the NHL for the clubs' seasons.
+links, The Events Calendar REST, the National Park Service's events API) and
+the server-rendered cards of the Alliance for Pioneer Square's calendar and
+art-walk pages and of Friends of Waterfront Park's events page (`cards`),
+folded into `Around Pioneer Square` unless the room has a row of its own.
+Two rows are written by the build rather than read: March to the Match at
+Occidental Square 90 minutes before every Sounders home game, and Owl 'n
+Thistle's weekly music table, which its site prints without dates. ESPN, MLB
+and the NHL for the clubs' seasons. `NPS_API_KEY` in the environment replaces
+the data.gov demo key for the Klondike feed (optional).

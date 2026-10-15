@@ -17,7 +17,7 @@
      blue and violet to magenta, neighbors alternating light and dark */
   /* all three families sit a step back from the pure primaries: the same
      hues, less glare, so the stripes and ticks read after the titles */
-  --v-baba: #9e2e2e; --v-central: #9e5e2e; --v-sjf: #9e8e2e; --v-trinity: #6a2e9e; --v-nordo: #9e2e7a; --v-occidental: #2e9e45; --v-around: #2e7f9e; --v-lumen: #8b8fe8; --v-tmobile: #8ad8e0; --v-wamu: #5d57c9; --v-sodo: #aab8d6; /* the rooms, one hue each (city.js cssVar): the brick blocks warm, the park green, the stadiums lqa's own */
+  --v-baba: #9e2e2e; --v-central: #9e5e2e; --v-sjf: #9e8e2e; --v-trinity: #6a2e9e; --v-nordo: #9e2e7a; --v-occidental: #2e9e45; --v-around: #2e7f9e; --v-owl: #5e9e2e; --v-klondike: #9e7a2e; --v-lumen: #8b8fe8; --v-tmobile: #8ad8e0; --v-wamu: #5d57c9; --v-waterfront: #2e7f9e; --v-sodo: #aab8d6; /* the rooms, one hue each (city.js cssVar): the brick blocks warm, the park green, the stadiums lqa's own */
   --venue-text: 72%;     /* how much of the venue hue the card's venue label keeps (light mode) */
   --tint: 26%;           /* the venue wash behind each card (light mode; 13% in the dark palette) */
   /* event-type hues (calendar ticks, agenda right edge): concerts salmon and
@@ -57,7 +57,7 @@
     --v-cornish: #3ecf97; --v-cpa: #4da3f0; --v-tmobile: #8ad8e0; --v-seactr: #6a72e6;
     --v-lumen: #8b8fe8; --v-husky: #c4a0f0; --v-siff: #b596e0; --v-vera: #a26be6; --v-otb: #e07ae0; --v-mccaw: #d158a7;
     --v-scc: #7fa7cc; --v-sct: #6cc9db; --v-mopop: #e88ad8; --v-pacsci: #62b8f7; --v-kexp: #b48cf5; --v-goat: #5fb3a1; --v-rep: #f0827a;
-    --v-paramount: #e39a6e; --v-showbox: #e8c45a; --v-sodo: #aab8d6; --v-croc: #7ed67f;
+    --v-paramount: #e39a6e; --v-showbox: #e8c45a; --v-waterfront: #86c9ea; --v-sodo: #aab8d6; --v-croc: #7ed67f;
     --venue-text: 100%; --tint: 13%;
     --t-concert: #f0806a; --t-sports: #f2d21b; --t-arts: #d63a4f;
     --t-movie: #8b9db0; --t-community: #e660a8; --t-expo: #4fd1c5; --t-bar: #e3ad3c; --alert: #ff4b3e;
@@ -72,7 +72,7 @@
   color-scheme: dark;
   --sky: #141a20; --mist: #1d252e; --ink: #e8edf1; --ink-soft: #9aa7b2; --ink-bright: #ffffff;
   --line: #333f4a; --gold: #f08a33; --gold-soft: #3a2a1a;
-  --v-baba: #ea8686; --v-central: #eab486; --v-sjf: #eadb86; --v-trinity: #c486ea; --v-nordo: #ea86c8; --v-occidental: #86ea9a; --v-around: #86d9ea; --v-lumen: #8b8fe8; --v-tmobile: #8ad8e0; --v-wamu: #a6a1ea; --v-sodo: #aab8d6;
+  --v-baba: #ea8686; --v-central: #eab486; --v-sjf: #eadb86; --v-trinity: #c486ea; --v-nordo: #ea86c8; --v-occidental: #86ea9a; --v-around: #86d9ea; --v-owl: #b8ea86; --v-klondike: #eac786; --v-lumen: #8b8fe8; --v-tmobile: #8ad8e0; --v-wamu: #a6a1ea; --v-sodo: #aab8d6;
   --venue-text: 100%; --tint: 13%;
   --t-concert: #f0806a; --t-sports: #f2d21b; --t-arts: #d63a4f;
   --t-movie: #8b9db0; --t-community: #e660a8; --t-expo: #4fd1c5; --t-bar: #e3ad3c; --alert: #ff4b3e;

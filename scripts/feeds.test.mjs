@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { mapTribeEvents, tribeType, feedSources, emptyListGate, spanishDates, parseTusboletosList, tusboletosTimes, decodeBody, parseJsonLdEvents, parseIcs, icsToTribeRows, ticketeraDates, parseTicketeraList, parseTicketeraDetail, pageRoom, icsStart, mapIcsFile, eventLinks, mapSquarespaceEvents, cardDates, parseCards } from './feeds.mjs';
+import { mapTribeEvents, tribeType, feedSources, emptyListGate, spanishDates, parseTusboletosList, tusboletosTimes, decodeBody, parseJsonLdEvents, parseIcs, icsToTribeRows, ticketeraDates, parseTicketeraList, parseTicketeraDetail, pageRoom, icsStart, mapIcsFile, eventLinks, mapSquarespaceEvents, cardDates, parseCards, mapNpsEvents, cardClock } from './feeds.mjs';
 
 const room = 'Field Arts &#038; Events Hall &#8211; Donna M. Morris Theater';
 const row = (title, start, extra = {}) => ({ title, start_date: start, status: 'publish', all_day: false, venue: { venue: room }, categories: [], ...extra });
@@ -293,4 +293,39 @@ test('cardDates with no year printed takes the nearest year forward, day-first t
   const html = '<article class="mec-event-article"><h3 class="mec-event-title"><a href="https://c.com/events/x/">Ska Island</a></h3><span class="mec-start-date-label">17 Oct</span> … <span class="mec-start-time">7:00 pm</span></article>';
   const out = parseCards(html, { item: /<article class="mec-event-article"/, title: /class="mec-event-title"><a[^>]*href="([^"]+)"[^>]*>([^<]+)</, when: /mec-start-date-label">([^<]+)<\/span>[\s\S]{0,800}?mec-start-time">([^<]+)</, venue: 'Central Saloon' });
   assert.equal(out.length, 1); assert.equal(out[0].time, '19:00'); assert.equal(out[0].venue, 'Central Saloon'); assert.equal(out[0].title, 'Ska Island');
+});
+
+test('parseCards takes a default clock for listings that print none', () => {
+  const html = '<div class="grid-item"><h3><a href="/art-walks/nov/">November First Thursday Art Walk: 11/5</a></h3><p><strong>November 05, 2026</strong></p></div>';
+  const out = parseCards(html, { item: /<div class="grid-item"/, title: /<h3><a href="([^"]+)">([^<]+)<\/a>/, when: /<strong>([^<]+)<\/strong>/, type: 'arts', base: 'https://pioneersquare.org/art-walks/', time: '17:00' });
+  assert.deepEqual(out, [{ venue: '', title: 'November First Thursday Art Walk: 11/5', date: '2026-11-05', time: '17:00', url: 'https://pioneersquare.org/art-walks/nov/', type: 'arts' }]);
+});
+
+test('mapNpsEvents: one row per date at the first start time, the park pinned, all-day when flagged', () => {
+  const data = { data: [
+    { eventid: 'A1', title: 'Living Voices: Native Vision', dates: ['2026-11-07', '2026-11-08'], times: [{ timestart: '01:00 PM', timeend: '01:45 PM' }, { timestart: '02:00 PM' }], location: '', infourl: '', isallday: 'false' },
+    { eventid: 'B2', title: 'Junior Ranger Day', dates: ['2026-12-05'], times: [], location: 'Cadillac Hotel', infourl: 'https://www.nps.gov/klse/x.htm', isallday: 'true' },
+  ] };
+  assert.deepEqual(mapNpsEvents(data, { venue: 'Klondike Gold Rush NHP', type: 'community' }), [
+    { venue: 'Klondike Gold Rush NHP', title: 'Living Voices: Native Vision', date: '2026-11-07', time: '13:00', url: 'https://www.nps.gov/planyourvisit/event-details.htm?id=A1', type: 'community' },
+    { venue: 'Klondike Gold Rush NHP', title: 'Living Voices: Native Vision', date: '2026-11-08', time: '13:00', url: 'https://www.nps.gov/planyourvisit/event-details.htm?id=A1', type: 'community' },
+    { venue: 'Klondike Gold Rush NHP', title: 'Junior Ranger Day', date: '2026-12-05', time: '', url: 'https://www.nps.gov/klse/x.htm', type: 'community' },
+  ]);
+});
+
+test('cardClock: a range start without a meridiem borrows the end\'s, flipped when it would follow the end', () => {
+  assert.equal(cardClock('5:30‑7 pm'), '17:30');
+  assert.equal(cardClock('10 am‑12 pm'), '10:00');
+  assert.equal(cardClock('10‑12 pm'), '10:00');
+  assert.equal(cardClock('12–8 pm'), '12:00');
+  assert.equal(cardClock('11–1 pm'), '11:00');
+  assert.equal(cardClock('Doors 7:00 PM'), '19:00');
+  assert.equal(cardClock('all day'), '');
+  assert.deepEqual(cardDates('Thursday Oct 29 5:30‑7 pm', new Date('2026-10-15')), [{ date: '2026-10-29', time: '17:30' }]);
+});
+
+test('parseCards strips tags inside a title and a date (Waterfront Park\'s no-widow spans)', () => {
+  const html = '<div class="grid-item" data-id="1"><a href="https://waterfrontparkseattle.org/blog/event/x/?date=202611031000"><div class="inner-wrap"><h3 class="widont ">Tuesday Nov 3,<span class="nbsp">&nbsp;</span>2026</h3><h3 class="widont date-time">10 am‑12 pm</h3><h4 class="widont ">Secrets of Seattle&#8217;s Shoreline Walking<span class="nbsp">&nbsp;</span>Tour</h4></div></a></div>';
+  const out = parseCards(html, { item: /<div class="grid-item"/, title: /<a href="([^"]+)">[\s\S]*?<h4 class="widont ">([\s\S]*?)<\/h4>/, when: /<h3 class="widont ">([\s\S]*?)<\/h3><h3 class="widont date-time">([^<]*)<\/h3>/, venue: 'Waterfront Park', type: 'community' });
+  assert.deepEqual(out, [{ venue: 'Waterfront Park', title: 'Secrets of Seattle’s Shoreline Walking Tour', date: '2026-11-03', time: '10:00', url: 'https://waterfrontparkseattle.org/blog/event/x/?date=202611031000', type: 'community' }]);
 });

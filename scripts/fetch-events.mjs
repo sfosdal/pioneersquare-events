@@ -15,8 +15,13 @@
  *     Central Saloon and Baba Yaga's ma.to page (schema.org), the Seattle Jazz
  *     Fellowship and Nordo (Squarespace), Trinity (Eventbrite links),
  *     Occidental Square (the Downtown Seattle Association's Events Calendar)
- *   - the Alliance for Pioneer Square's neighbourhood calendar (city.js
- *     `feeds`, the `cards` kind), folded by alias or into Around Pioneer Square
+ *   - the Alliance for Pioneer Square's neighbourhood calendar and its First
+ *     Thursday Art Walk pages (city.js `feeds`, the `cards` kind), folded by
+ *     alias or into Around Pioneer Square
+ *   - the National Park Service's events API for Klondike Gold Rush NHP (`nps`)
+ *   - Friends of Waterfront Park's events page (`cards` on the Waterfront Park row)
+ *   - written rules: March to the Match at Occidental Square before every
+ *     Sounders home game; Owl 'n Thistle's weekly music table
  *   - ESPN, MLB and the NHL for the six Seattle clubs' seasons (Teams view);
  *     Seahawks, Sounders, Reign and Mariners home games are in the listing
  *     through the stadiums' Ticketmaster pages
@@ -248,6 +253,25 @@ for (const t of CITY.teams.filter((x) => x.inject)) { // CITY.teams, not badges.
     if (listed) { if (!listed.time && g.time && !g.tbd) listed.time = g.time; continue; } // the feed's listing stands; the league's first pitch fills a time it lacks
     merged.push({ venue, title: `${t.inject.name || t.name || t.label} vs ${g.opp.name}`, date: g.date, time: g.time, url: t.inject.url, type: 'sports', ...(g.tbd ? { dateTbd: true } : {}), ...(g.watch ? { watch: g.watch } : {}) });
   }
+}
+// March to the Match: the Sounders' supporters gather in Occidental Park and
+// march to Lumen Field before every home game, 90 minutes before kickoff — a
+// Pioneer Square event in its own right, written from the club's schedule
+// (Steve, 2026-10-15). The title names the opponent, not the club, so the
+// row stays a community row rather than a game.
+for (const g of (seasons.sounders || []).filter((x) => x.home && x.date >= today && x.time && !x.tbd)) { // from today: no synthetic rows into the archive
+  const [h, m] = g.time.split(':').map(Number); const mins = h * 60 + m - 90;
+  if (mins < 0 || merged.some((e) => e.date === g.date && e.venue === 'Occidental Square' && /march to the match/i.test(e.title))) continue;
+  merged.push({ venue: 'Occidental Square', title: `March to the Match (before the ${g.opp.short || g.opp.name} game)`, date: g.date, time: `${String(Math.floor(mins / 60)).padStart(2, '0')}:${String(mins % 60).padStart(2, '0')}`, url: 'https://weareecs.com/march-to-the-match', type: 'community', free: true });
+}
+// Owl 'n Thistle prints a weekly schedule with no dates (owlnthistle.com/live-music-schedule),
+// so the next ten weeks are written out from it — no clock, since the page prints none;
+// Sunday alternates and is left out. Re-copy the table when the pub changes it.
+const OWL = { 1: 'Aqualizer', 2: "Jazz Jam — Seattle's longest-running jazz night", 4: 'Danny Godinez', 5: 'Irish Cover Band', 6: 'Irish Cover Band' }; // by weekday (Mon=1)
+for (let i = 0; i < 70; i++) {
+  const d = new Date(Date.parse(today + 'T12:00:00Z') + i * 86400e3), dow = d.getUTCDay(), date = d.toISOString().slice(0, 10);
+  if (!OWL[dow] || merged.some((e) => e.venue === "Owl 'n Thistle" && e.date === date)) continue;
+  merged.push({ venue: "Owl 'n Thistle", title: OWL[dow], date, time: '', url: 'https://owlnthistle.com/live-music-schedule', type: 'concert' });
 }
 // Ticket availability for the Ticketmaster venues, from a local checker
 // (scripts/data/soldout.json — empty until one runs for Pioneer Square): counts and
