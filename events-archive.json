@@ -1,3 +1,67 @@
 {
- "events": []
+ "events": [
+  {
+   "venue": "Owl 'n Thistle",
+   "title": "Danny Godinez",
+   "date": "2026-10-15",
+   "time": "",
+   "url": "https://owlnthistle.com/live-music-schedule",
+   "type": "concert"
+  },
+  {
+   "venue": "Around Pioneer Square",
+   "title": "The Dreaming Room",
+   "date": "2026-10-15",
+   "time": "18:30",
+   "url": "https://pioneersquare.org/our-events/the-dreaming-room/",
+   "type": "community"
+  },
+  {
+   "venue": "Central Saloon",
+   "title": "Skullrockit C4 • Lunar Pilots • Happy Feather",
+   "date": "2026-10-15",
+   "time": "19:00",
+   "url": "https://centralsaloon.com/events/skullrockit-c4-lunar-pilots-happy-feather/",
+   "type": "concert"
+  },
+  {
+   "venue": "Around Pioneer Square",
+   "title": "Shannon Lay + Blake Burgess Show",
+   "date": "2026-10-15",
+   "time": "19:00",
+   "url": "https://pioneersquare.org/our-events/shannon-lay-blake-burgess-show/",
+   "type": "community"
+  },
+  {
+   "venue": "Seattle Jazz Fellowship",
+   "title": "Alex Dugdale",
+   "date": "2026-10-15",
+   "time": "19:30",
+   "url": "https://seattlejazzfellowship.org/events/jerry-steinhilber-hgztd-929a2-j37rt-rfd6x-jaakk-b7akt-rtx72-9yyjr-7abz6-hs4mh-g4mk9-tsjr7-64hg5-7z83k-3z7y3-3yl2l-5z9gg-4gsmy-67dlj-g4h62-7ccbf-n9am3-49bkd",
+   "type": "concert"
+  },
+  {
+   "venue": "Around Pioneer Square",
+   "title": "Sculpt & Sip – live nude model – wine – intro sculpting",
+   "date": "2026-10-15",
+   "time": "19:30",
+   "url": "https://pioneersquare.org/our-events/sculpt-sip-live-nude-model-wine-intro-sculpting-4/",
+   "type": "community"
+  },
+  {
+   "venue": "Showbox SoDo",
+   "title": "PALACE with Rollo Doherty",
+   "date": "2026-10-15",
+   "time": "20:00:00",
+   "url": "https://www.axs.com/events/1414741/palace-tickets?skin=showboxpresents&src=AEGLIVE_WSHBXSEA030115VEN001"
+  },
+  {
+   "venue": "Trinity Nightclub",
+   "title": "1st Gen presents W.I.P. At Trinity- Seattle’s #1 Thursday Night Party",
+   "date": "2026-10-15",
+   "time": "22:00",
+   "url": "https://www.eventbrite.com/e/1st-gen-presents-wip-at-trinity-seattles-1-thursday-night-party-tickets-1993025922184",
+   "type": "concert"
+  }
+ ]
 }
