@@ -62,6 +62,45 @@
    "time": "22:00",
    "url": "https://www.eventbrite.com/e/1st-gen-presents-wip-at-trinity-seattles-1-thursday-night-party-tickets-1993025922184",
    "type": "concert"
+  },
+  {
+   "venue": "Owl 'n Thistle",
+   "title": "Irish Cover Band",
+   "date": "2026-10-16",
+   "time": "",
+   "url": "https://owlnthistle.com/live-music-schedule",
+   "type": "concert"
+  },
+  {
+   "venue": "Central Saloon",
+   "title": "Kids on Fire • Age of Kid (Japan) • Phantom Racer • Goodbye Viking",
+   "date": "2026-10-16",
+   "time": "19:00",
+   "url": "https://centralsaloon.com/events/kids-on-fire-age-of-kid-japan-phantom-racer-2/",
+   "type": "concert"
+  },
+  {
+   "venue": "Seattle Jazz Fellowship",
+   "title": "George Colligan",
+   "date": "2026-10-16",
+   "time": "19:30",
+   "url": "https://seattlejazzfellowship.org/events/jerry-steinhilber-hgztd-929a2-j37rt-rfd6x-jaakk-b7akt-rtx72-9yyjr-7abz6-hs4mh-g4mk9-tsjr7-64hg5-7z83k-3z7y3-3yl2l-5z9gg-4gsmy-67dlj-g4h62-7ccbf-n9am3-49bkd-acxea-zjbns",
+   "type": "concert"
+  },
+  {
+   "venue": "Showbox SoDo",
+   "title": "Pattie Gonia",
+   "date": "2026-10-16",
+   "time": "20:00:00",
+   "url": "https://www.axs.com/events/1250264/pattie-gonia-tickets?skin=showboxpresents&src=AEGLIVE_WSHBXSEA030115VEN001"
+  },
+  {
+   "venue": "Trinity Nightclub",
+   "title": "Fridays at Trinity • Seattle's Biggest Party",
+   "date": "2026-10-16",
+   "time": "22:00",
+   "url": "https://www.eventbrite.com/e/fridays-at-trinity-seattles-biggest-party-tickets-1992901845066",
+   "type": "concert"
   }
  ]
 }
