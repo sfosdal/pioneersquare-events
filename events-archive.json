@@ -101,6 +101,101 @@
    "time": "22:00",
    "url": "https://www.eventbrite.com/e/fridays-at-trinity-seattles-biggest-party-tickets-1992901845066",
    "type": "concert"
+  },
+  {
+   "venue": "Owl 'n Thistle",
+   "title": "Irish Cover Band",
+   "date": "2026-10-17",
+   "time": "",
+   "url": "https://owlnthistle.com/live-music-schedule",
+   "type": "concert"
+  },
+  {
+   "venue": "Occidental Square",
+   "title": "Occidental Square Flea",
+   "date": "2026-10-17",
+   "time": "12:00",
+   "url": "https://downtownseattle.org/event/occidental-square-flea/",
+   "type": "community"
+  },
+  {
+   "venue": "Around Pioneer Square",
+   "title": "Anarchist Chess Club (free!)",
+   "date": "2026-10-17",
+   "time": "14:00",
+   "url": "https://pioneersquare.org/our-events/anarchist-chess-club-free/",
+   "type": "community"
+  },
+  {
+   "venue": "Around Pioneer Square",
+   "title": "Seattle Battle Jacket Club (free!)",
+   "date": "2026-10-17",
+   "time": "14:00",
+   "url": "https://pioneersquare.org/our-events/seattle-battle-jacket-club-free/",
+   "type": "community"
+  },
+  {
+   "venue": "Trinity Nightclub",
+   "title": "Party with a Purpose",
+   "date": "2026-10-17",
+   "time": "16:00",
+   "url": "https://www.eventbrite.com/e/party-with-a-purpose-tickets-1999653234654",
+   "type": "concert"
+  },
+  {
+   "venue": "Occidental Square",
+   "title": "March to the Match (before the CF Montréal game)",
+   "date": "2026-10-17",
+   "time": "18:00",
+   "url": "https://weareecs.com/march-to-the-match",
+   "type": "community",
+   "free": true
+  },
+  {
+   "venue": "Central Saloon",
+   "title": "The Selassie Ites • The Green Room",
+   "date": "2026-10-17",
+   "time": "19:30",
+   "url": "https://centralsaloon.com/events/ska-island-the-green-room-selassie-ites/",
+   "type": "concert"
+  },
+  {
+   "venue": "Seattle Jazz Fellowship",
+   "title": "George Colligan",
+   "date": "2026-10-17",
+   "time": "19:30",
+   "url": "https://seattlejazzfellowship.org/events/jerry-steinhilber-hgztd-929a2-j37rt-rfd6x-jaakk-b7akt-rtx72-9yyjr-7abz6-hs4mh-g4mk9-tsjr7-64hg5-7z83k-3z7y3-3yl2l-5z9gg-4gsmy-67dlj-g4h62-7ccbf-n9am3-49bkd-acxea",
+   "type": "concert"
+  },
+  {
+   "venue": "Lumen Field",
+   "title": "Seattle Sounders FC vs. CF Montréal",
+   "date": "2026-10-17",
+   "time": "19:30:00",
+   "url": "https://www.ticketmaster.com/seattle-sounders-fc-vs-cf-montreal-seattle-washington-10-17-2026/event/0F006383C475846F",
+   "type": "sports"
+  },
+  {
+   "venue": "Baba Yaga",
+   "title": "Des Santos",
+   "date": "2026-10-17",
+   "time": "20:00",
+   "url": "https://ma.to/event/des-santos-2026-10-17"
+  },
+  {
+   "venue": "Showbox SoDo",
+   "title": "Tinlicker with Helsloot",
+   "date": "2026-10-17",
+   "time": "20:45:00",
+   "url": "https://www.axs.com/events/1414733/tinlicker-tickets?skin=showboxpresents&src=AEGLIVE_WSHBXSEA030115VEN001"
+  },
+  {
+   "venue": "Trinity Nightclub",
+   "title": "Reload Saturdays at Trinity • Entertaining Seattle's Dance Community",
+   "date": "2026-10-17",
+   "time": "22:00",
+   "url": "https://www.eventbrite.com/e/reload-saturdays-at-trinity-entertaining-seattles-dance-community-tickets-1992902219185",
+   "type": "concert"
   }
  ]
 }
