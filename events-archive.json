@@ -243,6 +243,36 @@
    "date": "2026-10-18",
    "time": "19:30:00",
    "url": "https://www.axs.com/events/1438479/mom-jeans-tickets?skin=showboxpresents&src=AEGLIVE_WSHBXSEA030115VEN001"
+  },
+  {
+   "venue": "Owl 'n Thistle",
+   "title": "Aqualizer",
+   "date": "2026-10-19",
+   "time": "",
+   "url": "https://owlnthistle.com/live-music-schedule",
+   "type": "concert"
+  },
+  {
+   "venue": "Baba Yaga",
+   "title": "Disposable Parts Edition 5 Party",
+   "date": "2026-10-19",
+   "time": "19:00",
+   "url": "https://ma.to/event/disposable-parts-edition-5-2026-10-19"
+  },
+  {
+   "venue": "Seattle Jazz Fellowship",
+   "title": "Fellowship Jam Session",
+   "date": "2026-10-19",
+   "time": "19:30",
+   "url": "https://seattlejazzfellowship.org/events/fellowship-jam-session-wd2l6-yynsx-r7xsj-rne75-nfkxk-efs75",
+   "type": "concert"
+  },
+  {
+   "venue": "Baba Yaga",
+   "title": "Music Karaoke",
+   "date": "2026-10-19",
+   "time": "20:00",
+   "url": "https://ma.to/event/music-karaoke-2026-10-19"
   }
  ]
 }
