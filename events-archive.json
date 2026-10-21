@@ -273,6 +273,37 @@
    "date": "2026-10-19",
    "time": "20:00",
    "url": "https://ma.to/event/music-karaoke-2026-10-19"
+  },
+  {
+   "venue": "Owl 'n Thistle",
+   "title": "Jazz Jam — Seattle's longest-running jazz night",
+   "date": "2026-10-20",
+   "time": "",
+   "url": "https://owlnthistle.com/live-music-schedule",
+   "type": "concert"
+  },
+  {
+   "venue": "WAMU Theater",
+   "title": "Rise Against: Ricochet 2026",
+   "date": "2026-10-20",
+   "time": "19:00:00",
+   "url": "https://www.ticketmaster.com/rise-against-ricochet-2026-seattle-washington-10-20-2026/event/0F00646ABB58972E",
+   "type": "concert"
+  },
+  {
+   "venue": "Baba Yaga",
+   "title": "REZN",
+   "date": "2026-10-20",
+   "time": "20:00:00",
+   "url": "https://www.ticketweb.com/event/rezn-baba-yaga-tickets/14911443",
+   "type": "concert"
+  },
+  {
+   "venue": "Showbox SoDo",
+   "title": "The Blasting Company",
+   "date": "2026-10-20",
+   "time": "20:00:00",
+   "url": "https://www.axs.com/events/1493740/the-blasting-company-tickets?skin=showboxpresents&src=AEGLIVE_WSHBXSEA030115VEN001"
   }
  ]
 }
