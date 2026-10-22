@@ -304,6 +304,44 @@
    "date": "2026-10-20",
    "time": "20:00:00",
    "url": "https://www.axs.com/events/1493740/the-blasting-company-tickets?skin=showboxpresents&src=AEGLIVE_WSHBXSEA030115VEN001"
+  },
+  {
+   "venue": "T-Mobile Park",
+   "title": "Seattle Mariners Gift Cards",
+   "date": "2026-10-21",
+   "time": "",
+   "url": "https://am.ticketmaster.com/mariners/buy/marinersgiftcards?camefrom=tmredr",
+   "type": "sports"
+  },
+  {
+   "venue": "Around Pioneer Square",
+   "title": "Lowlander Brewery Launch Party",
+   "date": "2026-10-21",
+   "time": "17:00",
+   "url": "https://pioneersquare.org/our-events/lowlander-brewery-launch-party/",
+   "type": "community"
+  },
+  {
+   "venue": "Central Saloon",
+   "title": "Gavin Prophet • Lioneer • Honeyed",
+   "date": "2026-10-21",
+   "time": "19:00",
+   "url": "https://centralsaloon.com/events/gavin-prophet-lioneer-honeyed/",
+   "type": "concert"
+  },
+  {
+   "venue": "Baba Yaga",
+   "title": "Karaoke with a Guest Band",
+   "date": "2026-10-21",
+   "time": "20:00",
+   "url": "https://ma.to/event/karaoke-with-a-guest-band-2026-10-21"
+  },
+  {
+   "venue": "Showbox SoDo",
+   "title": "Sunset Rollercoaster with Cloudriver",
+   "date": "2026-10-21",
+   "time": "20:00:00",
+   "url": "https://www.axs.com/events/1383437/sunset-rollercoaster-tickets?skin=showboxpresents&src=AEGLIVE_WSHBXSEA030115VEN001"
   }
  ]
 }
