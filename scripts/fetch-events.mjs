@@ -31,6 +31,7 @@ import { buildIcs } from './ics.mjs';
 import { dropTimeClashes, isChurch, parseShowboxEvents } from './sources.mjs';
 import { feedSources, emptyListGate } from './feeds.mjs';
 import { mergeWithArchive, unionArchives, eventKey } from './merge.mjs';
+import { fixLinks } from './links.mjs';
 import { calmTitle, isNotice } from './titles.mjs';
 import { applySchedules } from './schedules.mjs';
 import { slugify, BADGE_FEEDS, TEAMS, CITY } from './badges.mjs';
@@ -262,7 +263,7 @@ for (const t of CITY.teams.filter((x) => x.inject)) { // CITY.teams, not badges.
 for (const g of (seasons.sounders || []).filter((x) => x.home && x.date >= today && x.time && !x.tbd)) { // from today: no synthetic rows into the archive
   const [h, m] = g.time.split(':').map(Number); const mins = h * 60 + m - 90;
   if (mins < 0 || merged.some((e) => e.date === g.date && e.venue === 'Occidental Square' && /march to the match/i.test(e.title))) continue;
-  merged.push({ venue: 'Occidental Square', title: `March to the Match (before the ${g.opp.short || g.opp.name} game)`, date: g.date, time: `${String(Math.floor(mins / 60)).padStart(2, '0')}:${String(mins % 60).padStart(2, '0')}`, url: 'https://weareecs.com/march-to-the-match', type: 'community', free: true });
+  merged.push({ venue: 'Occidental Square', title: `March to the Match (before the ${g.opp.short || g.opp.name} game)`, date: g.date, time: `${String(Math.floor(mins / 60)).padStart(2, '0')}:${String(mins % 60).padStart(2, '0')}`, url: 'https://weareecs.com/events/', type: 'community', free: true });
 }
 // Owl 'n Thistle prints a weekly schedule with no dates (owlnthistle.com/live-music-schedule),
 // so the next ten weeks are written out from it — no clock, since the page prints none;
@@ -301,6 +302,7 @@ if (Object.keys(seasons).length) {
   console.error('teams.json: no season fetched this run, the last one stands');
 }
 
+await fixLinks(merged, { venues: CITY.venues, today }); // ticket links that reach a real page: no scheme-less or wrapped links, a 404 goes to the venue's page (scripts/links.mjs)
 writeFileSync(JSON_OUT, JSON.stringify({ generated: new Date().toISOString(), events: merged }, null, 2) + '\n');
 // the archive record: this build's past events on top of everything already
 // recorded, never pruned (the feed keeps a year; the branch keeps it all)

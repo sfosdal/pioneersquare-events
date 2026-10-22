@@ -77,6 +77,19 @@
  *   nps         — the National Park Service events API for one park (`parkCode=`; NPS_API_KEY in
  *                the environment, else the data.gov DEMO_KEY): one row per listed date at the
  *                first start time (Klondike Gold Rush NHP's Seattle unit, Pioneer Square 2026-10-15).
+ *   boldtype    — a Bold Type Tickets box office (strangertickets.com, merctickets.com): its Browse
+ *                list, POSTed page by page for one `city`, names each show's room; `rooms` (a regex
+ *                on that room, required where the city has a groundsVenue) picks the shows, and
+ *                each kept show's page is read like `jsonld` for its clock, sold-out offers and
+ *                status (the Royal Room via Stranger Tickets, Seattle 2026-10-19).
+ *   spektrix    — a Spektrix box office's public API (system.spektrix.com/<client>/api/v3): /events
+ *                for the names, /instances for every performance (`start` is the theatre's wall
+ *                clock), one row each; cancelled ones and events marked "exclude from the events
+ *                page" are left out, `drop` takes classes and auditions by name, and the first
+ *                `maxStatus` (default 60) upcoming performances are asked /status — none available
+ *                = sold out. `link` is the ticket page, `{id}` filled with the event id's leading
+ *                digits — the number the theatre's own purchase site uses (Pentacle Theatre,
+ *                Salem 2026-10-20).
  *
  * Also here: the empty-list gate every build runs (`emptyListGate`) — a
  * fresh pull with zero upcoming events is a scouting failure or an outage,
@@ -286,7 +299,7 @@ export function tusboletosTimes(html) {
 }
 const listCache = new Map(); // one fetch of a ticketer's list per build, however many rows read it
 async function fetchText(url, ua) {
-  const res = await fetch(url, { headers: { 'User-Agent': ua, Accept: 'text/html,*/*' } });
+  const res = await fetch(url, { headers: { 'User-Agent': ua, Accept: 'text/html,*/*' }, signal: AbortSignal.timeout(60000) }); // a host that never answers fails the page, not the build
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   return decodeBody(await res.arrayBuffer(), res.headers.get('content-type') || '');
 }
@@ -834,7 +847,112 @@ async function fetchLudus(url, ua, label, opts) {
   return evs;
 }
 
-const KINDS = { tribe: fetchTribe, ics: fetchIcs, tusboletos: fetchTusboletos, jsonld: fetchJsonLd, ticketera: fetchTicketera, icsfile: fetchIcsFile, linked: fetchLinked, squarespace: fetchSquarespace, cards: fetchCards, nps: fetchNps, localist: fetchLocalist, ludus: fetchLudus };
+// ---- Bold Type Tickets (strangertickets.com, merctickets.com) ----
+/**
+ * The Browse page fills itself from POST /Actions/Events/BrowseEvents.html (city, page — every
+ * field has to be sent, or the page number is ignored), ten shows a page in a table: the show's
+ * link and title, a free-text date ("Wed, Oct 28, 7pm door, 8pm show"), the room with its town.
+ * The dates are read from each show's own page instead, whose schema.org Event is exact.
+ * Returns [{ id, url, title, place }] in page order.
+ */
+export function parseBoldtypeList(html) {
+  const text = (s) => decode(String(s || '').replace(/<[^>]+>/g, ' '));
+  const out = [];
+  for (const [, row] of String(html || '').matchAll(/<tr class="item">([\s\S]*?)<\/tr>/g)) {
+    const link = /href="(https?:\/\/[^"]+\/events\/(\d+)\/[^"]+)"[^>]*class="title"[^>]*>([\s\S]*?)<\/a>/.exec(row);
+    if (!link) continue; // a festival's own subsite, not a show
+    const place = /class="eventLocation">([\s\S]*?)<\/td>/.exec(row);
+    const room = place && /<a[^>]*>([\s\S]*?)<\/a>/.exec(place[1]);
+    out.push({ id: link[2], url: link[1], title: text(link[3]), place: text(place && place[1]), room: text(room && room[1]) });
+  }
+  return out;
+}
+const BOLDTYPE_DATE_ONLY = /^\s*(?:(?:mon|tue|wed|thu|fri|sat|sun)[a-z]*,?\s+)?(?:jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*\.?\s+\d{1,2}(?:st|nd|rd|th)?\s*$/i;
+async function fetchBoldtype(url, ua, label, opts) {
+  const { feed = {}, venue, types, defaultType, drop } = opts;
+  const rooms = feed.rooms || opts.rooms; // tested on the Venue cell, room and town ("El Sid at the APEX Everett, WA"): the city buttons are loose (Everett sits under Seattle), so `city: ''` + a town in `rooms` reads by place
+  const seen = new Map();
+  for (let page = 1; page <= (feed.maxPages || 30); page++) {
+    const body = new URLSearchParams({ page: String(page), terms: '', city: feed.city || '', date: '', end: '', venue: '' });
+    let res;
+    for (let tries = 1; ; tries++) { // the box office drops a connection, or answers 502, now and then on a long walk
+      try { res = await fetch(new URL('/Actions/Events/BrowseEvents.html', url), { method: 'POST', body, headers: { 'User-Agent': ua, Accept: 'text/html,*/*' }, signal: AbortSignal.timeout(30000) }); if (res.status >= 500) throw new Error(`HTTP ${res.status} on page ${page}`); res = { ok: res.ok, status: res.status, html: await res.text() }; break; }
+      catch (err) { if (tries >= 4) throw err; await new Promise((r) => setTimeout(r, 2000 * tries)); }
+    }
+    if (!res.ok) throw new Error(`HTTP ${res.status} on page ${page}`);
+    const before = seen.size;
+    for (const c of parseBoldtypeList(res.html)) if (!seen.has(c.id)) seen.set(c.id, c);
+    if (seen.size === before) break; // past the last page the list repeats
+    await new Promise((r) => setTimeout(r, 250));
+  }
+  const keep = [...seen.values()].filter((c) => (!rooms || rooms.test(c.place)) && !(drop && drop.test(c.title)));
+  const out = [];
+  let pages = 0;
+  for (const c of keep) {
+    try {
+      if (pages) await new Promise((r) => setTimeout(r, 250));
+      const html = await fetchText(c.url, ua).catch(async () => { await new Promise((r) => setTimeout(r, 2000)); return fetchText(c.url, ua); }); // one more try after a dropped connection
+      const evs = parseJsonLdEvents(html, { venue, types });
+      pages++;
+      for (const ev of evs) {
+        if (!ev.url) ev.url = c.url;
+        const so = /^\s*sold\s*out\b[\s:!-]*/i.exec(ev.title || ''); // "SOLD OUT The Doubleclicks": the box office's tag in the name
+        if (so) { ev.title = ev.title.slice(so[0].length); ev.soldOut = true; }
+        if (BOLDTYPE_DATE_ONLY.test(ev.title || '')) ev.title = `Show at ${c.room || ev.venue}`; // a run named by its night ("Saturday Oct 31") names nothing
+        const t = feed.type || defaultType;
+        if (t && (!types || types.includes(t))) ev.type = t;
+        out.push(ev);
+      }
+    } catch (err) { console.error(`${label}: ${c.url} ${err.message}`); }
+  }
+  console.log(`${label} (Bold Type): ${out.length} events from ${pages} of ${keep.length} kept shows (${seen.size} listed)`);
+  return out;
+}
+
+// ---- Spektrix box offices (system.spektrix.com/<client>/api/v3 — theatres) ----
+/**
+ * events: [{ id, name, attribute_SLExcludeFromViewEventsPage }]; instances: [{ id, event: { id },
+ * start: "2026-10-21T19:30:00" (the theatre's clock), cancelled }]. One row per instance on or
+ * after `today`; `link` is the ticket page with `{id}` = the event id's leading digits.
+ */
+export function mapSpektrix(events, instances, { venue, link = '', drop, type, types, today = '', label = 'feed' } = {}) {
+  const byId = new Map((events || []).map((e) => [e.id, e]));
+  const out = [];
+  for (const inst of instances || []) {
+    const e = byId.get(inst?.event?.id);
+    if (!e || inst.cancelled || e.attribute_SLExcludeFromViewEventsPage) continue;
+    const title = decode(e.name || '');
+    if (!title || (drop && drop.test(title))) continue;
+    const m = /^(\d{4}-\d{2}-\d{2})T(\d{2}:\d{2})/.exec(inst.start || '');
+    if (!m || (today && m[1] < today)) continue;
+    const num = (/^\d+/.exec(e.id) || [''])[0];
+    const ev = { venue: venue || label, title, date: m[1], time: m[2], url: link.replace('{id}', num), instance: inst.id };
+    if (type && (!types || types.includes(type))) ev.type = type;
+    out.push(ev);
+  }
+  return out;
+}
+async function fetchSpektrix(url, ua, label, opts) {
+  const { feed = {}, venue, types, defaultType, drop } = opts;
+  const api = url.replace(/\/+$/, '');
+  const get = async (path) => { const res = await fetch(`${api}/${path}`, { headers: { 'User-Agent': ua, Accept: 'application/json' }, signal: AbortSignal.timeout(60000) }); if (!res.ok) throw new Error(`HTTP ${res.status} on ${path}`); return res.json(); };
+  const today = new Date().toISOString().slice(0, 10);
+  const [events, instances] = await Promise.all([get('events'), get(`instances?startFrom=${today}`)]);
+  const out = mapSpektrix(events, instances, { venue, link: feed.link || '', drop: drop || feed.drop, type: feed.type || defaultType, types, today, label });
+  let asked = 0, sold = 0;
+  for (const ev of out.slice(0, feed.maxStatus ?? 60)) {
+    try {
+      if (asked++) await new Promise((r) => setTimeout(r, 200));
+      const st = await get(`instances/${ev.instance}/status`);
+      if (st && st.capacity > 0 && st.available === 0) { ev.soldOut = true; sold++; }
+    } catch (err) { console.error(`${label}: status ${ev.instance} ${err.message}`); }
+  }
+  for (const ev of out) delete ev.instance;
+  console.log(`${label} (Spektrix): ${out.length} performances, ${sold} sold out of ${asked} asked`);
+  return out;
+}
+
+const KINDS = { tribe: fetchTribe, ics: fetchIcs, tusboletos: fetchTusboletos, jsonld: fetchJsonLd, ticketera: fetchTicketera, icsfile: fetchIcsFile, linked: fetchLinked, squarespace: fetchSquarespace, cards: fetchCards, nps: fetchNps, localist: fetchLocalist, ludus: fetchLudus, boldtype: fetchBoldtype, spektrix: fetchSpektrix };
 
 /**
  * One source thunk per city.js venue with a `feed` (its listings pinned to that row) and one per

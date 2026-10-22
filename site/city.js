@@ -195,9 +195,9 @@
       type: 'concert',
       cssVar: '--v-lumen',
       color: '#8b8fe8',
-      url: 'https://www.lumenfield.com/events',
+      url: 'https://www.lumenfield.com/',
       icon: 'https://www.google.com/s2/favicons?domain=www.lumenfield.com&sz=128',
-      tm: { id: 'KovZpZAEknnA', match: 'lumen field', fallbackUrl: 'https://www.lumenfield.com/events', exclude: /stadium tour|notification list/i },
+      tm: { id: 'KovZpZAEknnA', match: 'lumen field', fallbackUrl: 'https://www.lumenfield.com/', exclude: /stadium tour|notification list/i },
       soldOut: 'tm',
     },
     'T-Mobile Park': {
