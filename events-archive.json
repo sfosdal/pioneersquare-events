@@ -342,6 +342,61 @@
    "date": "2026-10-21",
    "time": "20:00:00",
    "url": "https://www.axs.com/events/1383437/sunset-rollercoaster-tickets?skin=showboxpresents&src=AEGLIVE_WSHBXSEA030115VEN001"
+  },
+  {
+   "venue": "Owl 'n Thistle",
+   "title": "Danny Godinez",
+   "date": "2026-10-22",
+   "time": "",
+   "url": "https://owlnthistle.com/live-music-schedule",
+   "type": "concert"
+  },
+  {
+   "venue": "Around Pioneer Square",
+   "title": "Live Jazz: José Gonzales Trio",
+   "date": "2026-10-22",
+   "time": "16:00",
+   "url": "https://pioneersquare.org/our-events/live-jazz-jose-gonzales-trio/",
+   "type": "community"
+  },
+  {
+   "venue": "Central Saloon",
+   "title": "Xiphoid Dementia • Infinexhuma • Knifecream • Other",
+   "date": "2026-10-22",
+   "time": "19:00",
+   "url": "https://centralsaloon.com/events/xiphoid-dementia-infinexhuma-knifecream-other/",
+   "type": "concert"
+  },
+  {
+   "venue": "Seattle Jazz Fellowship",
+   "title": "Buster Williams Trio",
+   "date": "2026-10-22",
+   "time": "19:30",
+   "url": "https://seattlejazzfellowship.org/events/jerry-steinhilber-hgztd-929a2-j37rt-rfd6x-jaakk-b7akt-rtx72-9yyjr-7abz6-hs4mh-g4mk9-tsjr7-64hg5-7z83k-3z7y3-3yl2l-5z9gg-4gsmy-67dlj-g4h62-7ccbf-n9am3-49bkd-acxea-zjbns-p4t3h",
+   "type": "concert"
+  },
+  {
+   "venue": "Around Pioneer Square",
+   "title": "Sculpt & Sip – live nude model – wine – intro sculpting",
+   "date": "2026-10-22",
+   "time": "19:30",
+   "url": "https://pioneersquare.org/our-events/sculpt-sip-live-nude-model-wine-intro-sculpting-3/",
+   "type": "community"
+  },
+  {
+   "venue": "Showbox SoDo",
+   "title": "Charles Wesley Godwin with Lily Fitts",
+   "date": "2026-10-22",
+   "time": "20:00:00",
+   "url": "https://www.axs.com/events/1449696/charles-wesley-godwin-tickets?skin=showboxpresents&src=AEGLIVE_WSHBXSEA030115VEN001"
+  },
+  {
+   "venue": "Trinity Nightclub",
+   "title": "Y2K Thursdays At Trinity- Seattle’s #1 Thursday Night Party",
+   "date": "2026-10-22",
+   "time": "22:00",
+   "url": "https://www.eventbrite.com/e/y2k-thursdays-at-trinity-seattles-1-thursday-night-party-tickets-1993026086676",
+   "type": "concert"
   }
  ]
 }
