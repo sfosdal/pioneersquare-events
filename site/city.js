@@ -307,10 +307,10 @@
 
   var WORDS = {
     teamCity: 'Seattle', // the board drops it from the clubs' names ("Seattle Kraken" → Kraken)
-    presetDefault: 'Every room — Pioneer Square and the stadiums — every team and type',
+    presetDefault: 'Every venue — Pioneer Square and the stadiums — every team and type',
     presetNeighborhood: 'Pioneer Square only — Baba Yaga, the Central, the Jazz Fellowship, Trinity, Nordo, the Owl, Klondike, Occidental Square',
     presetBig: 'Only the places that hold 2,000 or more — Lumen Field, T-Mobile Park and WAMU',
-    phrases: { all: 'Showing everything.', none: 'Showing nothing yet — open Filter and pick some venues.', neighborhood: 'Showing Pioneer Square only.', big: 'Showing the big rooms only — the stadiums and WAMU.' },
+    phrases: { all: 'Showing everything.', none: 'Showing nothing yet — open Filter and pick some venues.', neighborhood: 'Showing Pioneer Square only.', big: 'Showing the big venues only — the stadiums and WAMU.' },
   };
 
   global.LQACity = {
