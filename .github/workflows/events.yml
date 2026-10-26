@@ -28,6 +28,8 @@ jobs:
           TICKETMASTER_API_KEY: ${{ secrets.TICKETMASTER_API_KEY }}
           ALLOW_NO_ARCHIVE: ${{ vars.ALLOW_NO_ARCHIVE }}   # set to 1 for the very first build only (no live feed, no archive branch yet), then delete the variable
         run: node scripts/fetch-events.mjs
+      - name: The rest of the city for the Map view (seattle.here.events' feed → site/city-map.json; never fails the build)
+        run: node scripts/city-map.mjs
       - name: Sitemap, robots.txt and event structured data
         run: node scripts/seo.mjs
       - name: Keep the archive branch (every past event ever published)

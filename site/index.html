@@ -119,6 +119,9 @@
     <button id="teamsBtn" type="button" role="radio" aria-checked="false" data-view="teams" aria-controls="teamsView" title="Home Teams — season schedules, every game, home and away">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3.6 9.5c3 1 5.4 3.6 6.3 7.3M20.4 9.5c-3 1-5.4 3.6-6.3 7.3M12 3v18M3 12h18"/></svg><span class="vt-label">Teams</span>
     </button>
+    <button id="mapBtn" type="button" role="radio" aria-checked="false" data-view="map" aria-controls="mapView" title="Map — where the venues are">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6-5.5-6-11a6 6 0 0 1 12 0c0 5.5-6 11-6 11z"/><circle cx="12" cy="10" r="2.2"/></svg><span class="vt-label">Map</span>
+    </button>
     <button id="filterToggle" class="vt-filter" type="button" aria-expanded="false" aria-controls="filterPanel" title="Filters">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 3H2l8 9.46V19l4 2v-8.54z"/></svg>
       <span class="vt-label">Filter</span>
@@ -310,6 +313,26 @@
   </section>
 </section>
 
+<!-- the Map view (Steve, 2026-10-24): the ground with a pin on every room, sized by
+     its upcoming events under the filters in force; a tapped pin opens its card.
+     The rest of Seattle's rooms too, from city-map.json (scripts/city-map.mjs reads
+     seattle.here.events' feed at build time) — Steve, 2026-10-25.
+     Drawn by local-map.js from local-map.json (scripts/build-local-map.mjs — the
+     shoreline, lakes and main roads read once from OpenStreetMap at build time)
+     — no tiles, nothing fetched off-site -->
+<section id="mapView" class="local-map" hidden aria-label="Map of the venues">
+  <div class="lm-frame">
+    <svg id="lmSvg" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Seattle with the venues marked, Pioneer Square's first"></svg>
+    <div class="lm-zoom" aria-label="Zoom">
+      <button type="button" data-z="in" title="Zoom in" aria-label="Zoom in">+</button>
+      <button type="button" data-z="out" title="Zoom out" aria-label="Zoom out">−</button>
+      <button type="button" data-z="fit" title="The whole map" aria-label="The whole map"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9V5a1 1 0 0 1 1-1h4M15 4h4a1 1 0 0 1 1 1v4M20 15v4a1 1 0 0 1-1 1h-4M9 20H5a1 1 0 0 1-1-1v-4"/></svg></button>
+      <button type="button" data-z="me" title="Find my location" aria-label="Find my location" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="1.6" fill="currentColor"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg></button> <!-- the visitor's own spot: the browser's Geolocation API on their say-so (local-map.js), no service behind it — Steve, 2026-10-25 -->
+    </div>
+  </div>
+  <p class="lm-caption" id="lmCaption"><span></span></p>
+</section>
+
 <!-- the Teams view: in place of the agenda while the Teams chip is on. A
      strip of the home teams, a bar naming a picked opponent, then the season
      in the agenda's own day/card markup (app.js renderTeams) -->
@@ -386,6 +409,10 @@
           <p>Refreshed once a day at noon. Every listing links to the venue or ticket page — check there before you go.</p>
         </div>
       </div>
+        <div>
+          <h3>The map</h3>
+          <p>The shoreline, the lakes and the main roads are © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors (ODbL), drawn here as one file made at build time — no map tiles, nothing fetched from anywhere else. Venues are placed from their street addresses.</p>
+        </div>
     </div>
   </details>
   <details class="share" id="embed">
@@ -459,5 +486,6 @@
 <script src="cities.js?v=__V__" defer></script> <!-- every city on here.events, for the Other Places sheet (generated in lqa, synced) -->
 <script src="filter.js?v=__V__" defer></script>
 <script src="app.js?v=__V__" defer></script>
+<script src="local-map.js?v=__V__" defer></script> <!-- the Map view (after app.js, which lends it LQAHooks) -->
 </body>
 </html>

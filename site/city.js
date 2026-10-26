@@ -99,6 +99,7 @@
   //   alias    the other spellings the feeds use for it, folded to this name
   var VENUES = {
     'Baba Yaga': { // 124 S Washington St — the cocktail bar with a stage: shows on TicketWeb, karaoke and trivia on ma.to
+      geo: [47.601, -122.33315],
       capacity: 200,
       type: 'concert',
       cssVar: '--v-baba',
@@ -112,6 +113,7 @@
       alias: /baba yaga/i,
     },
     'Central Saloon': { // 207 1st Ave S, Seattle's oldest bar (1892) and a 300-cap club; its own WordPress calendar
+      geo: [47.6006, -122.3344],
       capacity: 300,
       type: 'concert',
       cssVar: '--v-central',
@@ -123,6 +125,7 @@
       alias: /central saloon/i,
     },
     'Seattle Jazz Fellowship': { // 109 S Washington St — the listening room, five nights a week; Squarespace
+      geo: [47.59993, -122.33364],
       capacity: 100,
       type: 'concert',
       cssVar: '--v-sjf',
@@ -133,6 +136,7 @@
       alias: /jazz fellowship/i,
     },
     'Trinity Nightclub': { // 111 Yesler Way — three rooms, the weekend parties on Eventbrite
+      geo: [47.6016, -122.33325],
       capacity: 1000,
       type: 'concert',
       cssVar: '--v-trinity',
@@ -143,6 +147,7 @@
       alias: /trinity nightclub|trinity seattle/i,
     },
     'Nordo': { // Café Nordo's Culinarium, 109 S Main St — dinner theatre; Squarespace calendar
+      geo: [47.59993, -122.33364],
       capacity: 100,
       type: 'arts',
       cssVar: '--v-nordo',
@@ -153,6 +158,7 @@
       alias: /caf[eé] nordo|nordo'?s? culinarium|culinarium/i,
     },
     'Occidental Square': { // the park — markets, the flea, the art walk; the Downtown Seattle Association programs it
+      geo: [47.60048, -122.33315],
       capacity: 2000,
       type: 'community',
       cssVar: '--v-occidental',
@@ -163,6 +169,7 @@
       alias: /occidental (square|park)/i,
     },
     "Owl 'n Thistle": { // 808 Post Ave — the Irish pub with music most nights; its site prints a weekly schedule, no dates, so the build writes the week out (fetch-events.mjs)
+      geo: [47.60334, -122.33567],
       capacity: 100,
       type: 'concert',
       cssVar: '--v-owl',
@@ -172,6 +179,7 @@
       alias: /owl ?'?n'? ?thistle/i,
     },
     'Klondike Gold Rush NHP': { // 319 2nd Ave S — the National Park Service's Seattle unit, in the Cadillac Hotel: ranger talks, Living Voices
+      geo: [47.59938, -122.33186],
       capacity: 100,
       type: 'community',
       cssVar: '--v-klondike',
@@ -182,6 +190,7 @@
       alias: /klondike|cadillac hotel/i,
     },
     'Around Pioneer Square': { // everything else the Alliance's neighbourhood calendar lists — galleries, museums, walks, pop-ups (groundsVenue)
+      geo: [47.60186, -122.33392],
       capacity: 500,
       type: 'community',
       cssVar: '--v-around',
@@ -190,6 +199,7 @@
       icon: 'https://www.google.com/s2/favicons?domain=pioneersquare.org&sz=128',
     },
     'Lumen Field': {
+      geo: [47.59535, -122.33164],
       capacity: 68700,
       area: 'town',
       type: 'concert',
@@ -201,6 +211,7 @@
       soldOut: 'tm',
     },
     'T-Mobile Park': {
+      geo: [47.5914, -122.33251],
       capacity: 47900,
       area: 'town',
       type: 'concert',
@@ -212,6 +223,7 @@
       soldOut: 'tm',
     },
     'WAMU Theater': { // inside Lumen Field's event centre, 7,000 standing
+      geo: [47.59315, -122.3329],
       capacity: 7000,
       area: 'town',
       type: 'concert',
@@ -223,6 +235,7 @@
       alias: /wamu theat/i,
     },
     'Waterfront Park': { // Pier 62 and the new park along Alaskan Way, a ten-minute walk west — Friends of Waterfront Park's tours, films, dances and markets, from the cards on its events page
+      geo: [47.60711, -122.34142],
       capacity: 2000,
       type: 'community',
       cssVar: '--v-waterfront',
@@ -236,6 +249,7 @@
       alias: /waterfront park|pier 62/i,
     },
     'Showbox SoDo': { // AEG's 1,800-cap room on 1st Ave S; box office on AXS, read from showboxpresents.com (Ticketmaster has only resale)
+      geo: [47.58805, -122.33393],
       capacity: 1800,
       area: 'town',
       type: 'concert',
@@ -309,6 +323,46 @@
     ics: { name: 'Pioneer Square Events', short: 'Pioneer Square Events', teams: 'Seattle home teams — every season', prodid: '-//here.events//pioneersquare-events//EN', uidDomain: 'fosdal.net', // the UID domain the whole family issues (the shared ics test pins it)
       desc: 'Upcoming events in Pioneer Square\\, Seattle — the clubs\\, the Jazz Fellowship\\, Occidental Square and the stadiums\\, with the Seattle clubs\' seasons' },
     teams: TEAMS,
+    map: { // the Map view (local-map.js; the ground drawn once by scripts/build-local-map.mjs from OpenStreetMap, committed as site/local-map.json) — Steve, 2026-10-25
+      kind: 'urban',
+      bbox: [47.2, -122.56, 47.76, -122.05], // south, west, north, east — the whole of Seattle's ground — the city's own bbox (seattle-events), since the Map shows every room in the city, the neighbourhood's own first
+      home: [47.584, -122.35, 47.612, -122.32], // the view at first; the fit button shows the whole frame
+      focus: 'hood', // a neighbourhood site: the Map opens fitted to its own rooms (those without area: 'town')
+      city: { key: 'seattle', name: 'Seattle', url: 'https://seattle.here.events/' }, // the rest of the city's rooms and events, read from this site's feed at build time (scripts/city-map.mjs → city-map.json)
+      roads: ['motorway', 'trunk', 'primary'],
+      tolerance: 0.8,
+      labels: [
+        { name: 'Ballard', lat: 47.6685, lon: -122.3846, anchor: 'end' },
+        { name: 'Fremont', lat: 47.651, lon: -122.35, anchor: 'start' },
+        { name: 'Greenwood', lat: 47.6905, lon: -122.355, anchor: 'end' },
+        { name: 'University District', lat: 47.661, lon: -122.313, anchor: 'start' },
+        { name: 'Capitol Hill', lat: 47.623, lon: -122.318, anchor: 'start' },
+        { name: 'Queen Anne', lat: 47.637, lon: -122.357, anchor: 'end' },
+        { name: 'Downtown', lat: 47.608, lon: -122.336, anchor: 'end' },
+        { name: 'Pioneer Square', lat: 47.6015, lon: -122.333, anchor: 'end' },
+        { name: 'SoDo', lat: 47.588, lon: -122.33, anchor: 'end' },
+        { name: 'Beacon Hill', lat: 47.566, lon: -122.311, anchor: 'start' },
+        { name: 'Columbia City', lat: 47.559, lon: -122.287, anchor: 'start' },
+        { name: 'West Seattle', lat: 47.568, lon: -122.386, anchor: 'end' },
+        { name: 'Shoreline', lat: 47.756, lon: -122.341, anchor: 'end' },
+        { name: 'Kirkland', lat: 47.677, lon: -122.206, anchor: 'start' },
+        { name: 'Bellevue', lat: 47.61, lon: -122.201, anchor: 'start' },
+        { name: 'Redmond', lat: 47.674, lon: -122.121, anchor: 'start' },
+        { name: 'Woodinville', lat: 47.754, lon: -122.163, anchor: 'start' },
+        { name: 'Renton', lat: 47.483, lon: -122.217, anchor: 'start' },
+        { name: 'Tukwila', lat: 47.474, lon: -122.26, anchor: 'end' },
+        { name: 'Kent', lat: 47.381, lon: -122.235, anchor: 'start' },
+        { name: 'Federal Way', lat: 47.322, lon: -122.313, anchor: 'end' },
+        { name: 'Auburn', lat: 47.307, lon: -122.229, anchor: 'start' },
+        { name: 'Tacoma', lat: 47.253, lon: -122.444, anchor: 'end' },
+        { name: 'Puget Sound', lat: 47.52, lon: -122.47, kind: 'water', anchor: 'middle' },
+        { name: 'Elliott Bay', lat: 47.603, lon: -122.368, kind: 'water', anchor: 'middle' },
+        { name: 'Lake Washington', lat: 47.62, lon: -122.25, kind: 'water', anchor: 'middle' },
+        { name: 'Lake Union', lat: 47.639, lon: -122.335, kind: 'water', anchor: 'middle' },
+        { name: 'Lake Sammamish', lat: 47.6, lon: -122.09, kind: 'water', anchor: 'middle' },
+        { name: 'Commencement Bay', lat: 47.285, lon: -122.43, kind: 'water', anchor: 'middle' },
+      ],
+    },
     venues: VENUES,
     feeds: FEEDS,
     defaultOn: DEFAULT_ON,
