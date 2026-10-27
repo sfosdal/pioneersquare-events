@@ -610,6 +610,36 @@
    "time": "20:00:00",
    "url": "https://www.ticketweb.com/event/we-are-scientists-baba-yaga-tickets/14978893",
    "type": "concert"
+  },
+  {
+   "venue": "Owl 'n Thistle",
+   "title": "Aqualizer",
+   "date": "2026-10-26",
+   "time": "",
+   "url": "https://owlnthistle.com/live-music-schedule",
+   "type": "concert"
+  },
+  {
+   "venue": "Baba Yaga",
+   "title": "The Tubs + Touch Girl Apple Blossom",
+   "date": "2026-10-26",
+   "time": "19:00",
+   "url": "https://ma.to/event/the-tubs-26-oct-2026"
+  },
+  {
+   "venue": "Seattle Jazz Fellowship",
+   "title": "Fellowship Jam Session",
+   "date": "2026-10-26",
+   "time": "19:30",
+   "url": "https://seattlejazzfellowship.org/events/fellowship-jam-session-wd2l6-yynsx-r7xsj-rne75-nfkxk-nj5nl",
+   "type": "concert"
+  },
+  {
+   "venue": "Baba Yaga",
+   "title": "Music Karaoke",
+   "date": "2026-10-26",
+   "time": "20:00",
+   "url": "https://ma.to/event/music-karaoke-2026-10-26"
   }
  ]
 }
