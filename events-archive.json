@@ -685,6 +685,86 @@
    "date": "2026-10-27",
    "time": "20:00:00",
    "url": "https://babayagaseattle.com/"
+  },
+  {
+   "venue": "Around Pioneer Square",
+   "title": "Celebrating Theodore Roosevelt’s 168th Birthday at The Beautiful Things Exhibit",
+   "date": "2026-10-28",
+   "time": "12:00",
+   "url": "https://pioneersquare.org/our-events/celebrating-theodore-roosevelts-168th-birthday-at-the-beautiful-things-exhibit/",
+   "type": "community"
+  },
+  {
+   "venue": "Baba Yaga",
+   "title": "Seattle Photo Book Club",
+   "date": "2026-10-28",
+   "time": "17:00",
+   "url": "https://ma.to/event/seattle-photo-book-club-2026-10-28",
+   "type": "concert"
+  },
+  {
+   "venue": "Occidental Square",
+   "title": "March to the Match (before the Houston game)",
+   "date": "2026-10-28",
+   "time": "18:00",
+   "url": "https://weareecs.com/events/",
+   "type": "community",
+   "free": true
+  },
+  {
+   "venue": "Central Saloon",
+   "title": "The Entourage",
+   "date": "2026-10-28",
+   "time": "19:00",
+   "url": "https://centralsaloon.com/events/the-entourage/",
+   "type": "concert"
+  },
+  {
+   "venue": "Around Pioneer Square",
+   "title": "Tending the Altar | Little Altars Everywhere",
+   "date": "2026-10-28",
+   "time": "19:00",
+   "url": "https://pioneersquare.org/our-events/tending-the-altar-little-altars-everywhere/",
+   "type": "community"
+  },
+  {
+   "venue": "Showbox SoDo",
+   "title": "Catch Your Breath with Tx2, Arankai and Colorblind",
+   "date": "2026-10-28",
+   "time": "19:00:00",
+   "url": "https://www.axs.com/events/1462631/catch-your-breath-tickets?skin=showboxpresents&src=AEGLIVE_WSHBXSEA030115VEN001"
+  },
+  {
+   "venue": "Seattle Jazz Fellowship",
+   "title": "Bruce Phares",
+   "date": "2026-10-28",
+   "time": "19:30",
+   "url": "https://seattlejazzfellowship.org/events/jerry-steinhilber-hgztd-929a2-j37rt-rfd6x-jaakk-b7akt-rtx72-9yyjr-7abz6-hs4mh-g4mk9-tsjr7-64hg5-7z83k-3z7y3-3yl2l-5z9gg-4gsmy-67dlj-g4h62-7ccbf-n9am3-49bkd-acxea-zjbns-p4t3h-kmw77-s2zb7-fxsn8-psg6t",
+   "type": "concert"
+  },
+  {
+   "venue": "Baba Yaga",
+   "title": "The Haunt (21+ Event)",
+   "date": "2026-10-28",
+   "time": "19:30:00",
+   "url": "https://babayagaseattle.com/",
+   "type": "concert"
+  },
+  {
+   "venue": "Lumen Field",
+   "title": "Seattle Sounders FC vs. Houston Dynamo",
+   "date": "2026-10-28",
+   "time": "19:30:00",
+   "url": "https://www.ticketmaster.com/seattle-sounders-fc-vs-houston-dynamo-seattle-washington-10-28-2026/event/0F006383ED639A54",
+   "type": "sports"
+  },
+  {
+   "venue": "Baba Yaga",
+   "title": "Karaoke with a Guest Band",
+   "date": "2026-10-28",
+   "time": "20:00",
+   "url": "https://ma.to/event/karaoke-with-a-guest-band-2026-10-28",
+   "type": "concert"
   }
  ]
 }
