@@ -28,7 +28,7 @@
  */
 import { writeFileSync, readFileSync } from 'node:fs';
 import { buildIcs } from './ics.mjs';
-import { isChurch, parseShowboxEvents } from './sources.mjs';
+import { isChurch, parseShowboxEvents, BABA_OBSCURA_URL, parseBabaObscuraSchedule, babaObscuraRows, festivalOwnsNights } from './sources.mjs';
 import { feedSources, emptyListGate } from './feeds.mjs';
 import { mergeWithArchive, unionArchives, eventKey, dropClashes } from './merge.mjs';
 import { fixLinks } from './links.mjs';
@@ -147,11 +147,23 @@ async function showbox() {
   console.log(`Showbox SoDo: ${evs.length} shows`);
   return evs;
 }
+// Baba Obscura (Baba Yaga & Desert Daze, Nov 2026; Steve, 2026-10-29): the festival's schedule page, a
+// schema.org MusicEvent per set — parseBabaObscuraSchedule (as on the Seattle site). The festival is its own
+// venue (a row a night with the whole grid, the Showbox at the Market's stage included) and every set at a
+// room this site lists sits at that room too; the billed headliners are the artists the home page features.
+const BABA_STAGE_VENUE = (s) => (/^Baba Yaga/.test(s) ? 'Baba Yaga' : /^Axis/.test(s) ? 'Axis Pioneer Square' : CITY.venues[s] ? s : null);
+async function babaObscura() {
+  const home = await pageText('https://babaobscura.com/').catch((err) => { console.error('Baba Obscura home:', err.message); return ''; });
+  const headliners = [...new Set([...home.matchAll(/href="\/artists\/([a-z0-9-]+)"/g)].map((m) => m[1].replace(/-/g, ' ')))];
+  const evs = babaObscuraRows(parseBabaObscuraSchedule(await pageText(BABA_OBSCURA_URL)), { headliners, stageVenue: BABA_STAGE_VENUE });
+  console.log(`Baba Obscura: ${evs.filter((e) => !e.set).length} nights, ${evs.filter((e) => e.set).length} sets at its rooms`);
+  return evs;
+}
 // Rooms with their own calendar (city.js `feed`) and the neighbourhood calendar (city.js `feeds`) come through feeds.mjs
 const splitVenues = (keep) => Object.fromEntries(Object.entries(CITY.venues).filter(([, v]) => keep(v)));
 const feedsFirst = feedSources({ ...CITY, venues: splitVenues((v) => !v.feed?.secondary) }, BROWSER_UA); // venues whose own calendar leads (city.js `feed`) + the city-wide `feeds`
 const feedsSecond = feedSources({ ...CITY, venues: splitVenues((v) => v.feed?.secondary), feeds: [] }, BROWSER_UA); // venues whose own calendar fills in behind Ticketmaster
-const sources = [...ticketmasterRooms, showbox, ...feedsFirst];
+const sources = [...ticketmasterRooms, showbox, ...feedsFirst, babaObscura];
 // ...and the secondary listings: a venue's Ticketmaster read behind its own calendar, or its own
 // calendar behind Ticketmaster — city.js says which (tm.secondary / feed.secondary).
 const secondary = [...ticketmasterSecond, ...feedsSecond];
@@ -196,6 +208,8 @@ for (const src of secondary) {
   catch (err) { console.error('Source failed:', err.message); }
 }
 if (churchDropped) console.log(`Church events dropped: ${churchDropped}`);
+// the festival owns its nights at the rooms it plays: their placeholder rows give way, a set the room lists itself stays the room's
+all = festivalOwnsNights(all);
 
 // window, de-dupe, sort
 const today = new Date().toISOString().slice(0, 10);

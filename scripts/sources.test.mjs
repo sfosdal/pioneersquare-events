@@ -207,3 +207,33 @@ test('parseSquarespaceEvents pins a room\'s own calendar to its row when asked',
   assert.equal(parseSquarespaceEvents(data, { base: 'https://www.scuttlebuttbrewing.com', venue: 'Scuttlebutt Brewing' })[0].venue, 'Scuttlebutt Brewing');
   assert.equal(parseSquarespaceEvents(data, { base: 'https://www.scuttlebuttbrewing.com' })[0].venue, 'Taproom');
 });
+
+// --- Baba Obscura: the festival's schedule JSON-LD (a MusicEvent per set) ---
+test('Baba Obscura: sets read per night, a set past midnight on the next calendar day, Axis stages short, the festival row a night and each set at its venue; the venue gives way only where it should', async () => {
+  const { parseBabaObscuraSchedule, babaObscuraRows, festivalOwnsNights } = await import('./sources.mjs');
+  const set = (act, stage, start, end, night) => ({ '@type': 'MusicEvent', name: `${act} at Baba Obscura 2026`, description: `${act} performs live at Baba Obscura 2026 — ${stage}, Seattle, ${night} at 00:00.`,
+    startDate: start, endDate: end, performer: { name: act }, location: { name: stage }, superEvent: { '@type': 'Festival', name: 'Baba Obscura 2026' } });
+  const html = `<script type="application/ld+json">${JSON.stringify({ '@graph': [
+    set('Muneca', 'Baba Yaga Up', '2026-11-07T02:20:00.000Z', '2026-11-07T02:50:00.000Z', 'Fri 11/6'),
+    set('Rose City Band', 'Axis Pioneer Square (South Stage)', '2026-11-06T08:00:00.000Z', '2026-11-06T09:00:00.000Z', 'Fri 11/6'), // the site's own dating: the night's morning
+    set('Shifters!!', 'Central Saloon', '2026-11-07T03:30:00.000Z', '2026-11-07T04:00:00.000Z', 'Fri 11/6'),
+    set('Ghostwoman', 'Showbox at the Market', '2026-11-09T04:15:00.000Z', '2026-11-09T05:15:00.000Z', 'Sun 11/8'),
+  ] })}</script>`;
+  const nights = parseBabaObscuraSchedule(html);
+  assert.deepEqual(Object.keys(nights), ['2026-11-06', '2026-11-08']);
+  assert.deepEqual(nights['2026-11-06'].map((s) => [s.act, s.stage, s.at, s.start]), [['Muneca', 'Baba Yaga Up', '2026-11-06', '18:20'], ['Shifters!!', 'Central Saloon', '2026-11-06', '19:30'], ['Rose City Band', 'Axis South', '2026-11-07', '00:00']]);
+  const rows = babaObscuraRows(nights, { headliners: ['rose city band'], stageVenue: (s) => (/^Baba Yaga/.test(s) ? 'Baba Yaga' : /^Axis/.test(s) ? 'Axis Pioneer Square' : s) });
+  const fri = rows.find((r) => r.venue === 'Baba Obscura' && r.date === '2026-11-06');
+  assert.equal(fri.title, 'Rose City Band'); assert.equal(fri.time, '18:20'); assert.equal(fri.sets.length, 3);
+  const rcb = rows.find((r) => r.set && r.title === 'Rose City Band');
+  assert.deepEqual([rcb.venue, rcb.date, rcb.time, rcb.end, rcb.stage], ['Axis Pioneer Square', '2026-11-07', '00:00', '01:00', 'Baba Obscura · South stage']);
+  const own = [
+    { venue: 'Central Saloon', date: '2026-11-06', title: 'Baba Obscura @ Central' }, // a placeholder on a night the festival plays there: gone
+    { venue: 'Central Saloon', date: '2026-11-08', title: 'Baba Yaga & Desert Daze Present: Baba Obscura' }, // no festival set there that night: stays
+    { venue: 'Showbox at the Market', date: '2026-11-08', title: 'The Black Angels with GHOSTWOMAN', time: '20:00' }, // the venue's own show names the act: the set gives way
+  ];
+  const out = festivalOwnsNights([...own, ...rows]);
+  assert.deepEqual(out.filter((e) => e.venue === 'Central Saloon' && !e.set).map((e) => e.date), ['2026-11-08']);
+  assert.deepEqual(out.filter((e) => e.venue === 'Showbox at the Market').map((e) => e.title), ['The Black Angels with GHOSTWOMAN']);
+  assert.ok(out.every((e) => !('fest' in e)));
+});

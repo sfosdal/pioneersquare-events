@@ -302,3 +302,78 @@ export function parseShowboxEvents(html) {
   }
   return out;
 }
+
+// ---- Baba Obscura: Baba Yaga & Desert Daze's roving festival (Nov 2026) ----
+// The schedule page carries one schema.org MusicEvent per set (the act, its
+// stage, UTC start and end, and "Thu 11/5" — the festival night — in the
+// description), each with the Festival as its superEvent. A night past
+// midnight stays on its festival night in the grid; the set's own row sits on
+// its calendar date. Returns the nights: { date: [{ stage, act, start, end, at }] }.
+export const BABA_OBSCURA_URL = 'https://babaobscura.com/schedule';
+const nextDate = (d) => new Date(Date.parse(`${d}T12:00:00Z`) + 86400e3).toISOString().slice(0, 10);
+// "Axis Pioneer Square (North Stage)" → "Axis North", as the festival's stages page names them
+const stageName = (s) => { const m = s.match(/^Axis\b.*\((North|South) Stage\)/i); return m ? `Axis ${m[1]}` : s; };
+const LA_PARTS = (iso) => {
+  const p = Object.fromEntries(new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Los_Angeles', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' })
+    .formatToParts(new Date(iso)).map((x) => [x.type, x.value]));
+  return { date: `${p.year}-${p.month}-${p.day}`, time: `${p.hour}:${p.minute}` };
+};
+export function parseBabaObscuraSchedule(html) {
+  const nights = {}, seen = new Set();
+  for (const m of String(html).matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) {
+    let data; try { data = JSON.parse(m[1]); } catch { continue; }
+    for (const g of [].concat(data['@graph'] || data)) {
+      if (g['@type'] !== 'MusicEvent' || !/baba obscura/i.test(g.superEvent?.name || '') || !g.startDate) continue;
+      const act = (g.performer?.name || g.name.replace(/ at Baba Obscura.*$/i, '')).trim(), stage = (g.location?.name || '').trim();
+      const k = `${act}|${stage}|${g.startDate}`; if (seen.has(k)) continue; seen.add(k);
+      const start = LA_PARTS(g.startDate), end = g.endDate ? LA_PARTS(g.endDate) : null;
+      // the night: "… Thu 11/5 at 18:00." — the year from the start
+      const n = (g.description || '').match(/\b(\d{1,2})\/(\d{1,2}) at \d/);
+      const night = n ? `${start.date.slice(0, 4)}-${n[1].padStart(2, '0')}-${n[2].padStart(2, '0')}` : start.date;
+      // the site dates a set past midnight on its night's own morning (Rose City Band, "Fri 11/6 at 00:00", is
+      // 2026-11-06T08:00Z) — a start before 6 AM belongs to the morning after the night
+      const at = start.date <= night && start.time < '06:00' ? nextDate(night) : start.date;
+      (nights[night] = nights[night] || []).push({ stage: stageName(stage), act, start: start.time, end: end ? end.time : '', at });
+    }
+  }
+  for (const d of Object.keys(nights)) nights[d].sort((a, b) => (a.at + a.start).localeCompare(b.at + b.start));
+  return nights;
+}
+
+// The nights → rows. The festival is its own venue (the Festivals group): a
+// row a night, titled with the billed headliners playing it (else the act
+// closing the night), the whole bill as `lineup` and the grid as `sets`. And
+// each set at its own venue (`stageVenue`, the city's name for that room, or
+// null where the city doesn't list it), stage named, `set: true`, `fest`
+// marking it for festivalOwnsNights. Headliners are lowercase names.
+export function babaObscuraRows(nights, { headliners = [], stageVenue = () => null, url = BABA_OBSCURA_URL, tickets = 'https://babaobscura.com/tickets' } = {}) {
+  const out = [];
+  for (const [date, list] of Object.entries(nights).sort()) {
+    const stages = [];
+    for (const s of list) { let st = stages.find((x) => x.stage === s.stage); if (!st) stages.push(st = { stage: s.stage, acts: [] }); st.acts.push({ act: s.act, start: s.start, ...(s.end ? { end: s.end } : {}) }); }
+    const billed = list.filter((s) => headliners.includes(s.act.toLowerCase())).map((s) => s.act);
+    const title = (billed.length ? [...new Set(billed)].reverse() : [list[list.length - 1].act]).join(', ');
+    out.push({ venue: 'Baba Obscura', type: 'concert', url, date, time: list[0].start, title, lineup: list.map((s) => s.act), sets: stages });
+    for (const s of list) {
+      const venue = stageVenue(s.stage); if (!venue) continue;
+      const room = s.stage.replace(/^Baba Yaga |^Axis /, ''); // "Up", "Down", "North", "South" — the room's own name is the venue
+      out.push({ venue, type: 'concert', url: tickets, date: s.at, time: s.start, ...(s.end ? { end: s.end } : {}), title: s.act,
+        stage: 'Baba Obscura' + (room !== s.stage ? ` · ${room} stage` : ''), set: true, fest: 'Baba Obscura' });
+    }
+  }
+  return out;
+}
+
+// A festival owns its nights at the venues it plays: on a night it has sets
+// at a venue, that venue's own "Baba Obscura" placeholder rows give way, and
+// a set the venue already lists (its act named in the venue's own title —
+// the Showbox's "The Black Angels with GHOSTWOMAN") is left to the venue's row.
+export function festivalOwnsNights(rows, name = 'Baba Obscura') {
+  const re = new RegExp(name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i');
+  const sets = rows.filter((e) => e.fest === name), at = new Set(sets.map((e) => `${e.venue}|${e.date}`));
+  const own = rows.filter((e) => e.fest !== name && e.venue !== name);
+  return rows.filter((e) => {
+    if (e.fest === name) return !own.some((o) => o.venue === e.venue && o.date === e.date && !re.test(o.title || '') && (o.title || '').toLowerCase().includes(e.title.toLowerCase()));
+    return !(at.has(`${e.venue}|${e.date}`) && re.test(e.title || ''));
+  }).map((e) => { if (e.fest !== name) return e; const { fest, ...r } = e; return r; });
+}

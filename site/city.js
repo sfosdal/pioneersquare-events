@@ -112,6 +112,24 @@
       feed: { kind: 'jsonld', url: 'https://ma.to/venue/babayagaseattle', drop: /taco tuesday/i },
       alias: /baba yaga/i,
     },
+    'Axis Pioneer Square': { // 308 1st Ave S — the club with two rooms (North 400, South 150), both Baba Obscura stages (Nov 2026); its own calendar not scouted yet
+      geo: [47.59935, -122.33425], // placed by hand, from the address
+      capacity: 550,
+      type: 'concert',
+      cssVar: '--v-axis',
+      color: '#86a6ea',
+      url: 'https://babaobscura.com/stages',
+      icon: 'https://www.google.com/s2/favicons?domain=babaobscura.com&sz=128',
+    },
+    'Baba Obscura': { // Baba Yaga & Desert Daze's roving festival, Nov 5–8 2026: six stages at Baba Yaga, Axis, the Central and the Showbox at the Market (Steve, 2026-10-29)
+      geo: [47.6003, -122.3338], // placed by hand: Pioneer Square, between its stages
+      capacity: 2500, // the six stages together (the festival's own capacities)
+      festival: true,
+      cssVar: '--v-obscura',
+      color: '#c79bea',
+      url: 'https://babaobscura.com/schedule',
+      icon: 'https://www.google.com/s2/favicons?domain=babaobscura.com&sz=128',
+    },
     'Central Saloon': { // 207 1st Ave S, Seattle's oldest bar (1892) and a 300-cap club; its own WordPress calendar
       geo: [47.6006, -122.3344],
       capacity: 300,
@@ -275,7 +293,7 @@
   ];
 
   // The filter panel's starting state: every room on, nothing off.
-  var DEFAULT_ON = ['Baba Yaga', 'Central Saloon', 'Seattle Jazz Fellowship', 'Trinity Nightclub', 'Nordo', 'Occidental Square', "Owl 'n Thistle", 'Klondike Gold Rush NHP', 'Around Pioneer Square', 'Lumen Field', 'T-Mobile Park', 'WAMU Theater', 'Showbox SoDo', 'Waterfront Park'];
+  var DEFAULT_ON = ['Baba Yaga', 'Axis Pioneer Square', 'Central Saloon', 'Seattle Jazz Fellowship', 'Trinity Nightclub', 'Nordo', 'Occidental Square', "Owl 'n Thistle", 'Klondike Gold Rush NHP', 'Around Pioneer Square', 'Lumen Field', 'T-Mobile Park', 'WAMU Theater', 'Showbox SoDo', 'Waterfront Park', 'Baba Obscura'];
   var DEFAULT_OFF = [];
   var PREFS_KNOWN_FROM = null; // no default-off venue yet, so nothing for saved prefs to be told about
 
@@ -303,6 +321,7 @@
     ['cap', 'stadium'], ['cap', 'arena'], ['cap', 'hall'], ['cap', 'room'],
     // appended 2026-10-15 afternoon (the registry is append-only: old share codes keep their meaning)
     ['venue', "Owl 'n Thistle"], ['venue', 'Klondike Gold Rush NHP'], ['venue', 'Waterfront Park'],
+    ['venue', 'Axis Pioneer Square'], ['venue', 'Baba Obscura'], // 2026-10-29: 30 slots, still six digits
   ];
 
   var WORDS = {
