@@ -765,6 +765,94 @@
    "time": "20:00",
    "url": "https://ma.to/event/karaoke-with-a-guest-band-2026-10-28",
    "type": "concert"
+  },
+  {
+   "venue": "Owl 'n Thistle",
+   "title": "Danny Godinez",
+   "date": "2026-10-29",
+   "time": "",
+   "url": "https://owlnthistle.com/live-music-schedule",
+   "type": "concert"
+  },
+  {
+   "venue": "Around Pioneer Square",
+   "title": "Meet Gengar at Going Twice",
+   "date": "2026-10-29",
+   "time": "16:00",
+   "url": "https://pioneersquare.org/our-events/meet-gengar-at-going-twice/",
+   "type": "community"
+  },
+  {
+   "venue": "Around Pioneer Square",
+   "title": "Maker Bar: Floating Floralscapes Pop-Up with The Works Seattle",
+   "date": "2026-10-29",
+   "time": "16:00",
+   "url": "https://pioneersquare.org/our-events/maker-bar-floating-floralscapes-pop-up-with-the-works-seattle/",
+   "type": "community"
+  },
+  {
+   "venue": "Waterfront Park",
+   "title": "Uncovering the History of Seattle’s Central Waterfront",
+   "date": "2026-10-29",
+   "time": "17:30",
+   "url": "https://waterfrontparkseattle.org/blog/event/uncovering-the-history-of-seattles-central-waterfront-2026/?date=202610291730",
+   "type": "community"
+  },
+  {
+   "venue": "Around Pioneer Square",
+   "title": "Chop Chop Game Night",
+   "date": "2026-10-29",
+   "time": "18:00",
+   "url": "https://pioneersquare.org/our-events/chop-chop-game-night/",
+   "type": "community"
+  },
+  {
+   "venue": "Central Saloon",
+   "title": "Scott Yoder • Fruit Juice • The Prince On",
+   "date": "2026-10-29",
+   "time": "19:00",
+   "url": "https://centralsaloon.com/events/scott-yoder-fruit-juice-the-prince-on/",
+   "type": "concert"
+  },
+  {
+   "venue": "Around Pioneer Square",
+   "title": "Paint And Sip (Watercolor Series) – (Age 21+)",
+   "date": "2026-10-29",
+   "time": "19:00",
+   "url": "https://pioneersquare.org/our-events/paint-and-sip-watercolor-series-age-21-2/",
+   "type": "community"
+  },
+  {
+   "venue": "Seattle Jazz Fellowship",
+   "title": "Jeremy Pelt",
+   "date": "2026-10-29",
+   "time": "19:30",
+   "url": "https://seattlejazzfellowship.org/events/jerry-steinhilber-hgztd-929a2-j37rt-rfd6x-jaakk-b7akt-rtx72-9yyjr-7abz6-hs4mh-g4mk9-tsjr7-64hg5-7z83k-3z7y3-3yl2l-5z9gg-4gsmy-67dlj-g4h62-7ccbf-n9am3-49bkd-acxea-zjbns-p4t3h-kmw77-s2zb7-fxsn8",
+   "type": "concert"
+  },
+  {
+   "venue": "Baba Yaga",
+   "title": "Frankie and the Witch Fingers",
+   "date": "2026-10-29",
+   "time": "20:00",
+   "url": "https://ma.to/event/frankie-and-the-witch-fingers-30-oct-2026",
+   "type": "concert"
+  },
+  {
+   "venue": "Baba Yaga",
+   "title": "Frankie and the Witch Fingers (21+ Event)",
+   "date": "2026-10-29",
+   "time": "20:00:00",
+   "url": "https://babayagaseattle.com/",
+   "type": "concert"
+  },
+  {
+   "venue": "Trinity Nightclub",
+   "title": "Y2K Thursdays At Trinity- Seattle’s #1 Thursday Night Party",
+   "date": "2026-10-29",
+   "time": "22:00",
+   "url": "https://www.eventbrite.com/e/y2k-thursdays-at-trinity-seattles-1-thursday-night-party-tickets-1997645315915",
+   "type": "concert"
   }
  ]
 }
