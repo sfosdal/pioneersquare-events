@@ -183,7 +183,7 @@
       color: '#86ea9a',
       url: 'https://www.downtownseattle.org/places/occidental-square/',
       icon: 'https://www.google.com/s2/favicons?domain=www.downtownseattle.org&sz=128',
-      feed: { kind: 'tribe', url: 'https://www.downtownseattle.org/wp-json/tribe/events/v1/events?venue=53729' },
+      feed: { kind: 'tribe', chrome: true, url: 'https://www.downtownseattle.org/wp-json/tribe/events/v1/events?venue=53729' },
       alias: /occidental (square|park)/i,
     },
     "Owl 'n Thistle": { // 808 Post Ave — the Irish pub with music most nights; its site prints a weekly schedule, no dates, so the build writes the week out (fetch-events.mjs)

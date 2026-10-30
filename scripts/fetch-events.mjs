@@ -30,7 +30,7 @@ import './failures.mjs'; // first: every outside call retried, the ones still fa
 import { writeFileSync, readFileSync } from 'node:fs';
 import { buildIcs } from './ics.mjs';
 import { isChurch, parseShowboxEvents, BABA_OBSCURA_URL, parseBabaObscuraSchedule, babaObscuraRows, festivalOwnsNights } from './sources.mjs';
-import { feedSources, emptyListGate, feedFailedVenues } from './feeds.mjs';
+import { feedSources, emptyListGate, feedFailedVenues, chromeFetch } from './feeds.mjs';
 import { mergeWithArchive, unionArchives, eventKey, dropClashes } from './merge.mjs';
 import { fixLinks } from './links.mjs';
 import { calmTitle, isNotice } from './titles.mjs';
@@ -143,8 +143,13 @@ async function pageText(url) {
 }
 // Showbox SoDo: AEG's whole Northwest listing on one server-rendered page,
 // the SoDo room kept — parseShowboxEvents (lqa's; Ticketmaster has only resale)
+// The page comes through the Chrome fingerprint (feeds.mjs chromeFetch): AEG's carbonhouse edge answers
+// GitHub's runners 406 (2026-10-30); a failed read keeps the room's upcoming rows from the last feed.
+const SHOWBOX_URL = 'https://www.showboxpresents.com/events/all';
 async function showbox() {
-  const evs = parseShowboxEvents(await pageText('https://www.showboxpresents.com/events/all'));
+  const html = (await chromeFetch([SHOWBOX_URL], 'Showbox SoDo')).get(SHOWBOX_URL);
+  if (html == null) { feedFailedVenues.add('Showbox SoDo'); throw new Error(`Showbox Presents unreadable ${SHOWBOX_URL}`); }
+  const evs = parseShowboxEvents(html);
   console.log(`Showbox SoDo: ${evs.length} shows`);
   return evs;
 }
