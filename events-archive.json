@@ -941,6 +941,15 @@
    "time": "22:00",
    "url": "https://www.eventbrite.com/e/halloween-friday-at-trinity-seattles-biggest-party-tickets-1999437700987",
    "type": "concert"
+  },
+  {
+   "venue": "Trinity Nightclub",
+   "title": "Tickets Available At The Door Halloween Friday at Trinity",
+   "date": "2026-10-30",
+   "time": "22:00",
+   "url": "https://www.eventbrite.com/e/tickets-available-at-the-door-halloween-friday-at-trinity-tickets-1999437700987",
+   "soldOut": true,
+   "type": "concert"
   }
  ]
 }
