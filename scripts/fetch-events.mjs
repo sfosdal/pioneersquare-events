@@ -29,7 +29,7 @@
 import './failures.mjs'; // first: every outside call retried, the ones still failing written to failures.json (Steve, 2026-10-29)
 import { writeFileSync, readFileSync } from 'node:fs';
 import { buildIcs } from './ics.mjs';
-import { isChurch, parseShowboxEvents, BABA_OBSCURA_URL, parseBabaObscuraSchedule, babaObscuraRows, festivalOwnsNights } from './sources.mjs';
+import { isChurch, parseShowboxEvents, BABA_OBSCURA_URL, parseBabaObscuraSchedule, babaObscuraRows, festivalOwnsNights, parseMarinersIndex, parseMarinersEvent } from './sources.mjs';
 import { feedSources, emptyListGate, feedFailedVenues, chromeFetch } from './feeds.mjs';
 import { mergeWithArchive, unionArchives, eventKey, dropClashes } from './merge.mjs';
 import { fixLinks } from './links.mjs';
@@ -142,6 +142,20 @@ async function pageText(url) {
   if (!res.ok) throw new Error(`HTTP ${res.status} ${url}`);
   return res.text();
 }
+// T-Mobile Park's own events page (mlb.com/mariners/tickets/events): the events the club sells itself,
+// which Ticketmaster never lists (Banana Ball, lottery-ticketed) — lqa-events' reader, copied 2026-10-31
+// (parseMarinersIndex / parseMarinersEvent). Home games come from the Mariners' schedule as before.
+const MARINERS_EVENTS = 'https://www.mlb.com/mariners/tickets/events';
+async function marinersEvents() {
+  const index = parseMarinersIndex(await pageText(MARINERS_EVENTS));
+  const out = [];
+  for (const it of index) {
+    try { out.push(...parseMarinersEvent(await pageText(it.url), it)); }
+    catch (err) { console.error(`T-Mobile Park ${it.url}: ${err.message}`); }
+  }
+  console.log(`T-Mobile Park (Mariners events page): ${out.length} rows from ${index.length} events`);
+  return out;
+}
 // Showbox SoDo: AEG's whole Northwest listing on one server-rendered page,
 // the SoDo room kept — parseShowboxEvents (lqa's; Ticketmaster has only resale)
 // The page comes through the Chrome fingerprint (feeds.mjs chromeFetch): AEG's carbonhouse edge answers
@@ -170,7 +184,7 @@ async function babaObscura() {
 const splitVenues = (keep) => Object.fromEntries(Object.entries(CITY.venues).filter(([, v]) => keep(v)));
 const feedsFirst = feedSources({ ...CITY, venues: splitVenues((v) => !v.feed?.secondary) }, BROWSER_UA); // venues whose own calendar leads (city.js `feed`) + the city-wide `feeds`
 const feedsSecond = feedSources({ ...CITY, venues: splitVenues((v) => v.feed?.secondary), feeds: [] }, BROWSER_UA); // venues whose own calendar fills in behind Ticketmaster
-const sources = [...ticketmasterRooms, showbox, ...feedsFirst, babaObscura];
+const sources = [...ticketmasterRooms, showbox, marinersEvents, ...feedsFirst, babaObscura];
 // ...and the secondary listings: a venue's Ticketmaster read behind its own calendar, or its own
 // calendar behind Ticketmaster — city.js says which (tm.secondary / feed.secondary).
 const secondary = [...ticketmasterSecond, ...feedsSecond];
