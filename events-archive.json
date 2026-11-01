@@ -949,6 +949,118 @@
    "time": "22:00",
    "url": "https://www.eventbrite.com/e/tickets-available-at-the-door-halloween-friday-at-trinity-tickets-1999437700987",
    "type": "concert"
+  },
+  {
+   "venue": "Owl 'n Thistle",
+   "title": "Irish Cover Band",
+   "date": "2026-10-31",
+   "time": "",
+   "url": "https://owlnthistle.com/live-music-schedule",
+   "type": "concert"
+  },
+  {
+   "venue": "Occidental Square",
+   "title": "Trick or Treating at Occidental Square",
+   "date": "2026-10-31",
+   "time": "11:00",
+   "url": "https://downtownseattle.org/event/trick-or-treating-at-occidental-square/",
+   "type": "community"
+  },
+  {
+   "venue": "Around Pioneer Square",
+   "title": "Trick or Treat in Pioneer Square",
+   "date": "2026-10-31",
+   "time": "11:00",
+   "url": "https://pioneersquare.org/our-events/trick-or-treat-in-pioneer-square/",
+   "type": "community"
+  },
+  {
+   "venue": "Around Pioneer Square",
+   "title": "Meet & Greet with Shima Star",
+   "date": "2026-10-31",
+   "time": "12:00",
+   "url": "https://pioneersquare.org/our-events/meet-greet-with-shima-star/",
+   "type": "community"
+  },
+  {
+   "venue": "WAMU Theater",
+   "title": "Boo! Seattle",
+   "date": "2026-10-31",
+   "time": "12:00:00",
+   "url": "https://on.fgtix.com/trk/YXGQ",
+   "type": "concert"
+  },
+  {
+   "venue": "Around Pioneer Square",
+   "title": "Trick or Treat: Costume Contest & Lushy at Occidental Fine Arts Center",
+   "date": "2026-10-31",
+   "time": "13:00",
+   "url": "https://pioneersquare.org/our-events/trick-or-treat-costume-contest-lushy-at-occidental-fine-arts-center/",
+   "type": "community"
+  },
+  {
+   "venue": "Waterfront Park",
+   "title": "Waterfront Park Firepit Socials",
+   "date": "2026-10-31",
+   "time": "15:00",
+   "url": "https://waterfrontparkseattle.org/blog/event/waterfront-park-firepit-socials/?date=202610311500",
+   "type": "community"
+  },
+  {
+   "venue": "Waterfront Park",
+   "title": "Spooky Salsa & Boo‑Chata at Pier 66",
+   "date": "2026-10-31",
+   "time": "18:00",
+   "url": "https://waterfrontparkseattle.org/blog/event/spooky-salsa-boo-chata/?date=202610311800",
+   "type": "community"
+  },
+  {
+   "venue": "Central Saloon",
+   "title": "HALLOWE-EMO",
+   "date": "2026-10-31",
+   "time": "19:00",
+   "url": "https://centralsaloon.com/events/hallowe-emo/",
+   "type": "concert"
+  },
+  {
+   "venue": "Seattle Jazz Fellowship",
+   "title": "Kerry Politzer",
+   "date": "2026-10-31",
+   "time": "19:30",
+   "url": "https://seattlejazzfellowship.org/events/d8hr2zfwac266gy",
+   "type": "concert"
+  },
+  {
+   "venue": "Baba Yaga",
+   "title": "Baba Yaga Live Music Night",
+   "date": "2026-10-31",
+   "time": "20:00",
+   "url": "https://ma.to/event/baba-yaga-live-music-night-2026-10-31",
+   "type": "concert"
+  },
+  {
+   "venue": "Baba Yaga",
+   "title": "Frankie and the Witch Fingers",
+   "date": "2026-10-31",
+   "time": "20:00",
+   "url": "https://ma.to/event/frankie-and-the-witch-fingers-01-nov-2026",
+   "type": "concert"
+  },
+  {
+   "venue": "Trinity Nightclub",
+   "title": "Halloween at Reload Saturdays at Trinity • Entertaining Seattle's Dance",
+   "date": "2026-10-31",
+   "time": "21:00",
+   "url": "https://www.eventbrite.com/e/halloween-at-reload-saturdays-at-trinity-entertaining-seattles-dance-tickets-1999438868479",
+   "type": "concert"
+  },
+  {
+   "venue": "Trinity Nightclub",
+   "title": "Txts Avail @ Door also sections(21+) hit up vipservicetrinity@gmail.com",
+   "date": "2026-10-31",
+   "time": "21:00",
+   "url": "https://www.eventbrite.com/e/txts-avail-door-also-sections21-hit-up-vipservicetrinitygmailcom-tickets-1999438868479",
+   "type": "concert"
   }
  ]
 }
