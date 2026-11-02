@@ -1062,6 +1062,35 @@
    "url": "https://www.eventbrite.com/e/txts-avail-door-also-sections21-hit-up-vipservicetrinitygmailcom-tickets-1999438868479",
    "soldOut": true,
    "type": "concert"
+  },
+  {
+   "venue": "Lumen Field",
+   "title": "Seattle Reign FC vs. Orlando Pride",
+   "date": "2026-11-01",
+   "time": "14:00:00",
+   "url": "https://www.ticketmaster.com/seattle-reign-fc-vs-orlando-pride-seattle-washington-11-01-2026/event/0F006454A56ACF3B",
+   "type": "sports",
+   "watch": {
+    "tv": [
+     "ESPN+"
+    ]
+   }
+  },
+  {
+   "venue": "Waterfront Park",
+   "title": "Waterfront Park Firepit Socials",
+   "date": "2026-11-01",
+   "time": "15:00",
+   "url": "https://waterfrontparkseattle.org/blog/event/waterfront-park-firepit-socials/?date=202611011500",
+   "type": "community"
+  },
+  {
+   "venue": "Central Saloon",
+   "title": "The Entourage • Killbilly • Analog Citizens",
+   "date": "2026-11-01",
+   "time": "19:00",
+   "url": "https://centralsaloon.com/events/killbilly-analog-citizens-2/",
+   "type": "concert"
   }
  ]
 }
