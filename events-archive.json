@@ -1091,6 +1091,55 @@
    "time": "19:00",
    "url": "https://centralsaloon.com/events/killbilly-analog-citizens-2/",
    "type": "concert"
+  },
+  {
+   "venue": "Owl 'n Thistle",
+   "title": "Aqualizer",
+   "date": "2026-11-02",
+   "time": "",
+   "url": "https://owlnthistle.com/live-music-schedule",
+   "type": "concert"
+  },
+  {
+   "venue": "Lumen Field",
+   "title": "Seattle Seahawks vs. Chicago Bears",
+   "date": "2026-11-02",
+   "time": "17:15:00",
+   "url": "https://www.ticketmaster.com/seattle-seahawks-vs-chicago-bears-seattle-washington-11-02-2026/event/0F006482E68774AB",
+   "type": "sports",
+   "watch": {
+    "tv": [
+     "ESPN"
+    ]
+   }
+  },
+  {
+   "venue": "Seattle Jazz Fellowship",
+   "title": "Fellowship Jam Session",
+   "date": "2026-11-02",
+   "time": "19:30",
+   "url": "https://seattlejazzfellowship.org/events/fellowship-jam-session-wd2l6-yynsx-r7xsj-rne75-nfkxk-nj5nl-e53h6",
+   "type": "concert"
+  },
+  {
+   "venue": "Central Saloon",
+   "title": "Seahawks vs Bears Afterparty with Wavvvy",
+   "date": "2026-11-02",
+   "time": "20:00",
+   "url": "https://centralsaloon.com/events/seahawks-vs-bears-afterparty-with-wavvvy/",
+   "type": "concert",
+   "watch": {
+    "tv": [
+     "ESPN"
+    ]
+   }
+  },
+  {
+   "venue": "Showbox SoDo",
+   "title": "Sienna Spiro with Summer Joy",
+   "date": "2026-11-02",
+   "time": "20:00:00",
+   "url": "https://www.axs.com/events/1480581/sienna-spiro-tickets?skin=showboxpresents&src=AEGLIVE_WSHBXSEA030115VEN001"
   }
  ]
 }
