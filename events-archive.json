@@ -1140,6 +1140,45 @@
    "date": "2026-11-02",
    "time": "20:00:00",
    "url": "https://www.axs.com/events/1480581/sienna-spiro-tickets?skin=showboxpresents&src=AEGLIVE_WSHBXSEA030115VEN001"
+  },
+  {
+   "venue": "Owl 'n Thistle",
+   "title": "Jazz Jam — Seattle's longest-running jazz night",
+   "date": "2026-11-03",
+   "time": "",
+   "url": "https://owlnthistle.com/live-music-schedule",
+   "type": "concert"
+  },
+  {
+   "venue": "Waterfront Park",
+   "title": "Secrets of Seattle’s Historic Shoreline Walking Tour",
+   "date": "2026-11-03",
+   "time": "10:00",
+   "url": "https://waterfrontparkseattle.org/blog/event/secrets-of-seattles-historic-shoreline-walking-tour/?date=202611031000",
+   "type": "community"
+  },
+  {
+   "venue": "Baba Yaga",
+   "title": "Ian Sweet with Luella",
+   "date": "2026-11-03",
+   "time": "19:00",
+   "url": "https://ma.to/event/ian-sweet-03-nov-2026",
+   "type": "concert"
+  },
+  {
+   "venue": "WAMU Theater",
+   "title": "Jessie Reyez: A Little Vengeance Tour",
+   "date": "2026-11-03",
+   "time": "20:00:00",
+   "url": "https://www.ticketmaster.com/jessie-reyez-a-little-vengeance-tour-seattle-washington-11-03-2026/event/0F006514DBD57BB1",
+   "type": "concert"
+  },
+  {
+   "venue": "WAMU Theater",
+   "title": "WAMU Theater Amplified: Jessie Reyez (Not an Event Ticket)",
+   "date": "2026-11-03",
+   "time": "20:00:00",
+   "url": "https://www.ticketmaster.com/wamu-theater-amplified-jessie-reyez-not-seattle-washington-11-03-2026/event/0F006518A64C9B19"
   }
  ]
 }
