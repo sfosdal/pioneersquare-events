@@ -277,6 +277,17 @@
       icon: 'https://www.google.com/s2/favicons?domain=www.showboxpresents.com&sz=128',
       alias: /showbox sodo/i,
     },
+    // --- On DICE (2026-11-03, Steve: "add all dice venues in cities/neighborhoods covered"): every venue on DICE's Seattle city page inside the map, read from its public DICE venue page ---
+    'Victory Hall': { // on DICE (1201 1st Avenue South, Seattle, Washington 98134); its DICE venue page is the listing (2026-11-03)
+      geo: [47.59192, -122.33478],
+      area: 'town',
+      type: 'concert',
+      cssVar: '--v-victoryhall',
+      color: '#86eac5',
+      url: 'https://dice.fm/venue/16066',
+      icon: 'https://www.google.com/s2/favicons?domain=dice.fm&sz=128',
+      feed: { kind: 'dice', url: 'https://dice.fm/venue/16066' },
+    },
   };
 
   // City-wide feeds — listings that name their rooms, folded by `alias` or
@@ -293,7 +304,7 @@
   ];
 
   // The filter panel's starting state: every room on, nothing off.
-  var DEFAULT_ON = ['Baba Yaga', 'Axis Pioneer Square', 'Central Saloon', 'Seattle Jazz Fellowship', 'Trinity Nightclub', 'Nordo', 'Occidental Square', "Owl 'n Thistle", 'Klondike Gold Rush NHP', 'Around Pioneer Square', 'Lumen Field', 'T-Mobile Park', 'WAMU Theater', 'Showbox SoDo', 'Waterfront Park', 'Baba Obscura'];
+  var DEFAULT_ON = ['Baba Yaga', 'Axis Pioneer Square', 'Central Saloon', 'Seattle Jazz Fellowship', 'Trinity Nightclub', 'Nordo', 'Occidental Square', "Owl 'n Thistle", 'Klondike Gold Rush NHP', 'Around Pioneer Square', 'Lumen Field', 'T-Mobile Park', 'WAMU Theater', 'Showbox SoDo', 'Waterfront Park', 'Baba Obscura', 'Victory Hall'];
   var DEFAULT_OFF = [];
   var PREFS_KNOWN_FROM = null; // no default-off venue yet, so nothing for saved prefs to be told about
 
@@ -322,6 +333,7 @@
     // appended 2026-10-15 afternoon (the registry is append-only: old share codes keep their meaning)
     ['venue', "Owl 'n Thistle"], ['venue', 'Klondike Gold Rush NHP'], ['venue', 'Waterfront Park'],
     ['venue', 'Axis Pioneer Square'], ['venue', 'Baba Obscura'], // 2026-10-29: 30 slots, still six digits
+    ['venue', 'Victory Hall'], // 2026-11-03: the DICE venues, 31 slots, 6 digits
   ];
 
   var WORDS = {
