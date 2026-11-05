@@ -1179,6 +1179,14 @@
    "date": "2026-11-03",
    "time": "20:00:00",
    "url": "https://www.ticketmaster.com/wamu-theater-amplified-jessie-reyez-not-seattle-washington-11-03-2026/event/0F006518A64C9B19"
+  },
+  {
+   "venue": "Baba Yaga",
+   "title": "Moon Panda: Satellite Tour",
+   "date": "2026-11-04",
+   "time": "20:00",
+   "url": "https://ma.to/event/moon-panda-satellite-tour-2026-11-04",
+   "type": "concert"
   }
  ]
 }
