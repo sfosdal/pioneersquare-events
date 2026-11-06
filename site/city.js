@@ -104,9 +104,9 @@
       type: 'concert',
       cssVar: '--v-baba',
       color: '#ea8686',
-      url: 'https://babayagaseattle.com/events',
+      url: 'https://babayagaseattle.com/seattle-pioneer-square-baba-yaga-events-days',
       icon: 'https://www.google.com/s2/favicons?domain=babayagaseattle.com&sz=128',
-      tm: { id: 'rZ7HnEZ17jbAS', match: 'baba yaga', fallbackUrl: 'https://babayagaseattle.com/events' },
+      tm: { id: 'rZ7HnEZ17jbAS', match: 'baba yaga', fallbackUrl: 'https://babayagaseattle.com/seattle-pioneer-square-baba-yaga-events-days' },
       // no soldOut tag: its TicketWeb pages answer 506 to a plain fetch and a bare page to a browser-impersonating one (2026-10-15), so there is no status to read
       // the bar's own site says "we are updating our events" (SpotHopper, empty API); ma.to's venue page carries the weekly nights as schema.org Events
       feed: { kind: 'jsonld', url: 'https://ma.to/venue/babayagaseattle', drop: /taco tuesday/i },
@@ -118,7 +118,7 @@
       type: 'concert',
       cssVar: '--v-axis',
       color: '#86a6ea',
-      url: 'https://babaobscura.com/stages',
+      url: 'https://babaobscura.com/schedule',
       icon: 'https://www.google.com/s2/favicons?domain=babaobscura.com&sz=128',
     },
     'Baba Obscura': { // Baba Yaga & Desert Daze's roving festival, Nov 5–8 2026: six stages at Baba Yaga, Axis, the Central and the Showbox at the Market (Steve, 2026-10-29)
@@ -223,9 +223,9 @@
       type: 'concert',
       cssVar: '--v-lumen',
       color: '#8b8fe8',
-      url: 'https://www.lumenfield.com/',
+      url: 'https://www.lumenfield.com/events-tickets/event-calendar',
       icon: 'https://www.google.com/s2/favicons?domain=www.lumenfield.com&sz=128',
-      tm: { id: 'KovZpZAEknnA', match: 'lumen field', fallbackUrl: 'https://www.lumenfield.com/', exclude: /stadium tour|notification list/i },
+      tm: { id: 'KovZpZAEknnA', match: 'lumen field', fallbackUrl: 'https://www.lumenfield.com/events-tickets/event-calendar', exclude: /stadium tour|notification list/i },
       soldOut: 'tm',
     },
     'T-Mobile Park': {
@@ -247,9 +247,9 @@
       type: 'concert',
       cssVar: '--v-wamu',
       color: '#a6a1ea',
-      url: 'https://www.wamutheater.com/',
+      url: 'https://www.wamutheater.com/event-calendar',
       icon: 'https://www.google.com/s2/favicons?domain=www.wamutheater.com&sz=128',
-      tm: { id: 'KovZpZAFFE7A', match: 'wamu', fallbackUrl: 'https://www.wamutheater.com/', exclude: /amplified access|parking/i },
+      tm: { id: 'KovZpZAFFE7A', match: 'wamu', fallbackUrl: 'https://www.wamutheater.com/event-calendar', exclude: /amplified access|parking/i },
       alias: /wamu theat/i,
     },
     'Waterfront Park': { // Pier 62 and the new park along Alaskan Way, a ten-minute walk west — Friends of Waterfront Park's tours, films, dances and markets, from the cards on its events page
