@@ -1341,6 +1341,438 @@
    "time": "22:00",
    "url": "https://www.eventbrite.com/e/y2k-thursdays-at-trinity-seattles-1-thursday-night-party-tickets-1998022888244",
    "type": "concert"
+  },
+  {
+   "venue": "Owl 'n Thistle",
+   "title": "Irish Cover Band",
+   "date": "2026-11-06",
+   "time": "",
+   "url": "https://owlnthistle.com/live-music-schedule",
+   "type": "concert"
+  },
+  {
+   "venue": "Baba Yaga",
+   "title": "Obscura Day II",
+   "date": "2026-11-06",
+   "time": "17:00",
+   "url": "https://ma.to/event/obscura-day-ii-06-nov-2026",
+   "type": "concert"
+  },
+  {
+   "venue": "Baba Obscura",
+   "type": "concert",
+   "url": "https://babaobscura.com/schedule",
+   "date": "2026-11-06",
+   "time": "18:20",
+   "title": "Rose City Band, Mdou Moctar",
+   "lineup": [
+    "Muneca",
+    "Erica Rose and the Ragged School",
+    "Emily Kokal (Warpaint)",
+    "Shifters!!",
+    "New Stallions",
+    "Carrion Kids",
+    "Biblioteka",
+    "CASI",
+    "jjuujjuu",
+    "Naked Giants",
+    "Spoon Benders",
+    "Serpentfoot",
+    "Skating Polly",
+    "Mdou Moctar",
+    "Packaging",
+    "Alex Vile",
+    "Downtown Boys",
+    "The Macks",
+    "King Youngblood",
+    "Night Beats",
+    "DJ Sarah Savannah",
+    "Rose City Band"
+   ],
+   "sets": [
+    {
+     "stage": "Baba Yaga Up",
+     "acts": [
+      {
+       "act": "Muneca",
+       "start": "18:20",
+       "end": "18:50"
+      },
+      {
+       "act": "Carrion Kids",
+       "start": "19:40",
+       "end": "20:25"
+      },
+      {
+       "act": "Spoon Benders",
+       "start": "21:05",
+       "end": "21:50"
+      },
+      {
+       "act": "Downtown Boys",
+       "start": "22:40",
+       "end": "23:35"
+      },
+      {
+       "act": "DJ Sarah Savannah",
+       "start": "23:45",
+       "end": "01:00"
+      }
+     ]
+    },
+    {
+     "stage": "Axis North",
+     "acts": [
+      {
+       "act": "Erica Rose and the Ragged School",
+       "start": "18:45",
+       "end": "19:30"
+      },
+      {
+       "act": "Biblioteka",
+       "start": "20:00",
+       "end": "20:45"
+      },
+      {
+       "act": "Skating Polly",
+       "start": "21:25",
+       "end": "22:10"
+      },
+      {
+       "act": "The Macks",
+       "start": "23:00",
+       "end": "23:50"
+      }
+     ]
+    },
+    {
+     "stage": "Baba Yaga Down",
+     "acts": [
+      {
+       "act": "Emily Kokal (Warpaint)",
+       "start": "18:50",
+       "end": "19:45"
+      },
+      {
+       "act": "jjuujjuu",
+       "start": "20:25",
+       "end": "21:05"
+      },
+      {
+       "act": "Mdou Moctar",
+       "start": "21:50",
+       "end": "22:45"
+      },
+      {
+       "act": "Night Beats",
+       "start": "23:40",
+       "end": "00:40"
+      }
+     ]
+    },
+    {
+     "stage": "Central Saloon",
+     "acts": [
+      {
+       "act": "Shifters!!",
+       "start": "19:30",
+       "end": "20:00"
+      },
+      {
+       "act": "CASI",
+       "start": "20:20",
+       "end": "21:00"
+      },
+      {
+       "act": "Serpentfoot",
+       "start": "21:20",
+       "end": "22:00"
+      },
+      {
+       "act": "Alex Vile",
+       "start": "22:20",
+       "end": "23:05"
+      },
+      {
+       "act": "King Youngblood",
+       "start": "23:30",
+       "end": "00:20"
+      }
+     ]
+    },
+    {
+     "stage": "Axis South",
+     "acts": [
+      {
+       "act": "New Stallions",
+       "start": "19:30",
+       "end": "20:00"
+      },
+      {
+       "act": "Naked Giants",
+       "start": "20:40",
+       "end": "21:15"
+      },
+      {
+       "act": "Packaging",
+       "start": "22:10",
+       "end": "23:00"
+      },
+      {
+       "act": "Rose City Band",
+       "start": "00:00",
+       "end": "01:00"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "venue": "Baba Yaga",
+   "type": "concert",
+   "url": "https://babaobscura.com/tickets",
+   "date": "2026-11-06",
+   "time": "18:20",
+   "end": "18:50",
+   "title": "Muneca",
+   "stage": "Baba Obscura · Up stage",
+   "set": true
+  },
+  {
+   "venue": "Axis Pioneer Square",
+   "type": "concert",
+   "url": "https://babaobscura.com/tickets",
+   "date": "2026-11-06",
+   "time": "18:45",
+   "end": "19:30",
+   "title": "Erica Rose and the Ragged School",
+   "stage": "Baba Obscura · North stage",
+   "set": true
+  },
+  {
+   "venue": "Baba Yaga",
+   "type": "concert",
+   "url": "https://babaobscura.com/tickets",
+   "date": "2026-11-06",
+   "time": "18:50",
+   "end": "19:45",
+   "title": "Emily Kokal (Warpaint)",
+   "stage": "Baba Obscura · Down stage",
+   "set": true
+  },
+  {
+   "venue": "Seattle Jazz Fellowship",
+   "title": "Nicole Yvette",
+   "date": "2026-11-06",
+   "time": "19:30",
+   "url": "https://seattlejazzfellowship.org/events/mnljy9prmd393lt",
+   "type": "concert"
+  },
+  {
+   "venue": "Central Saloon",
+   "type": "concert",
+   "url": "https://babaobscura.com/tickets",
+   "date": "2026-11-06",
+   "time": "19:30",
+   "end": "20:00",
+   "title": "Shifters!!",
+   "stage": "Baba Obscura",
+   "set": true
+  },
+  {
+   "venue": "Axis Pioneer Square",
+   "type": "concert",
+   "url": "https://babaobscura.com/tickets",
+   "date": "2026-11-06",
+   "time": "19:30",
+   "end": "20:00",
+   "title": "New Stallions",
+   "stage": "Baba Obscura · South stage",
+   "set": true
+  },
+  {
+   "venue": "Baba Yaga",
+   "type": "concert",
+   "url": "https://babaobscura.com/tickets",
+   "date": "2026-11-06",
+   "time": "19:40",
+   "end": "20:25",
+   "title": "Carrion Kids",
+   "stage": "Baba Obscura · Up stage",
+   "set": true
+  },
+  {
+   "venue": "Axis Pioneer Square",
+   "type": "concert",
+   "url": "https://babaobscura.com/tickets",
+   "date": "2026-11-06",
+   "time": "20:00",
+   "end": "20:45",
+   "title": "Biblioteka",
+   "stage": "Baba Obscura · North stage",
+   "set": true
+  },
+  {
+   "venue": "Central Saloon",
+   "type": "concert",
+   "url": "https://babaobscura.com/tickets",
+   "date": "2026-11-06",
+   "time": "20:20",
+   "end": "21:00",
+   "title": "CASI",
+   "stage": "Baba Obscura",
+   "set": true
+  },
+  {
+   "venue": "Baba Yaga",
+   "type": "concert",
+   "url": "https://babaobscura.com/tickets",
+   "date": "2026-11-06",
+   "time": "20:25",
+   "end": "21:05",
+   "title": "jjuujjuu",
+   "stage": "Baba Obscura · Down stage",
+   "set": true
+  },
+  {
+   "venue": "Axis Pioneer Square",
+   "type": "concert",
+   "url": "https://babaobscura.com/tickets",
+   "date": "2026-11-06",
+   "time": "20:40",
+   "end": "21:15",
+   "title": "Naked Giants",
+   "stage": "Baba Obscura · South stage",
+   "set": true
+  },
+  {
+   "venue": "Baba Yaga",
+   "type": "concert",
+   "url": "https://babaobscura.com/tickets",
+   "date": "2026-11-06",
+   "time": "21:05",
+   "end": "21:50",
+   "title": "Spoon Benders",
+   "stage": "Baba Obscura · Up stage",
+   "set": true
+  },
+  {
+   "venue": "Central Saloon",
+   "type": "concert",
+   "url": "https://babaobscura.com/tickets",
+   "date": "2026-11-06",
+   "time": "21:20",
+   "end": "22:00",
+   "title": "Serpentfoot",
+   "stage": "Baba Obscura",
+   "set": true
+  },
+  {
+   "venue": "Axis Pioneer Square",
+   "type": "concert",
+   "url": "https://babaobscura.com/tickets",
+   "date": "2026-11-06",
+   "time": "21:25",
+   "end": "22:10",
+   "title": "Skating Polly",
+   "stage": "Baba Obscura · North stage",
+   "set": true
+  },
+  {
+   "venue": "Baba Yaga",
+   "type": "concert",
+   "url": "https://babaobscura.com/tickets",
+   "date": "2026-11-06",
+   "time": "21:50",
+   "end": "22:45",
+   "title": "Mdou Moctar",
+   "stage": "Baba Obscura · Down stage",
+   "set": true
+  },
+  {
+   "venue": "Trinity Nightclub",
+   "title": "Fridays at Trinity • Seattle's Biggest Party",
+   "date": "2026-11-06",
+   "time": "22:00",
+   "url": "https://www.eventbrite.com/e/fridays-at-trinity-seattles-biggest-party-tickets-1997644797364",
+   "type": "concert"
+  },
+  {
+   "venue": "Axis Pioneer Square",
+   "type": "concert",
+   "url": "https://babaobscura.com/tickets",
+   "date": "2026-11-06",
+   "time": "22:10",
+   "end": "23:00",
+   "title": "Packaging",
+   "stage": "Baba Obscura · South stage",
+   "set": true
+  },
+  {
+   "venue": "Central Saloon",
+   "type": "concert",
+   "url": "https://babaobscura.com/tickets",
+   "date": "2026-11-06",
+   "time": "22:20",
+   "end": "23:05",
+   "title": "Alex Vile",
+   "stage": "Baba Obscura",
+   "set": true
+  },
+  {
+   "venue": "Baba Yaga",
+   "type": "concert",
+   "url": "https://babaobscura.com/tickets",
+   "date": "2026-11-06",
+   "time": "22:40",
+   "end": "23:35",
+   "title": "Downtown Boys",
+   "stage": "Baba Obscura · Up stage",
+   "set": true
+  },
+  {
+   "venue": "Axis Pioneer Square",
+   "type": "concert",
+   "url": "https://babaobscura.com/tickets",
+   "date": "2026-11-06",
+   "time": "23:00",
+   "end": "23:50",
+   "title": "The Macks",
+   "stage": "Baba Obscura · North stage",
+   "set": true
+  },
+  {
+   "venue": "Central Saloon",
+   "type": "concert",
+   "url": "https://babaobscura.com/tickets",
+   "date": "2026-11-06",
+   "time": "23:30",
+   "end": "00:20",
+   "title": "King Youngblood",
+   "stage": "Baba Obscura",
+   "set": true
+  },
+  {
+   "venue": "Baba Yaga",
+   "type": "concert",
+   "url": "https://babaobscura.com/tickets",
+   "date": "2026-11-06",
+   "time": "23:40",
+   "end": "00:40",
+   "title": "Night Beats",
+   "stage": "Baba Obscura · Down stage",
+   "set": true
+  },
+  {
+   "venue": "Baba Yaga",
+   "type": "concert",
+   "url": "https://babaobscura.com/tickets",
+   "date": "2026-11-06",
+   "time": "23:45",
+   "end": "01:00",
+   "title": "DJ Sarah Savannah",
+   "stage": "Baba Obscura · Up stage",
+   "set": true
   }
  ]
 }
