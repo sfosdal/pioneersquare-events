@@ -160,7 +160,6 @@
       cssVar: '--v-trinity',
       color: '#c486ea',
       url: 'https://www.trinitynightclub.com/',
-      icon: 'marks/venues/trinitynightclub.com.png',
       feed: { kind: 'linked', url: 'https://www.trinitynightclub.com/', match: /eventbrite\.com\/e\//, max: 40 },
       alias: /trinity nightclub|trinity seattle/i,
     },
@@ -285,7 +284,7 @@
       cssVar: '--v-victoryhall',
       color: '#86eac5',
       url: 'https://dice.fm/venue/16066',
-      icon: 'marks/venues/dice.fm.png',
+      icon: 'marks/venues/victoryhallsea.com.png',
       feed: { kind: 'dice', url: 'https://dice.fm/venue/16066' },
     },
   };
