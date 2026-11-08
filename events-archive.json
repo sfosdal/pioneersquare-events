@@ -1773,6 +1773,570 @@
    "title": "DJ Sarah Savannah",
    "stage": "Baba Obscura · Up stage",
    "set": true
+  },
+  {
+   "venue": "Owl 'n Thistle",
+   "title": "Irish Cover Band",
+   "date": "2026-11-07",
+   "time": "",
+   "url": "https://owlnthistle.com/live-music-schedule",
+   "type": "concert"
+  },
+  {
+   "venue": "Axis Pioneer Square",
+   "type": "concert",
+   "url": "https://babaobscura.com/tickets",
+   "date": "2026-11-07",
+   "time": "00:00",
+   "end": "01:00",
+   "title": "Rose City Band",
+   "stage": "Baba Obscura · South stage",
+   "set": true
+  },
+  {
+   "venue": "Around Pioneer Square",
+   "title": "Introduction to Stained Glass",
+   "date": "2026-11-07",
+   "time": "10:00",
+   "url": "https://pioneersquare.org/our-events/introduction-to-stained-glass-8/",
+   "type": "community"
+  },
+  {
+   "venue": "Around Pioneer Square",
+   "title": "Glass Portrait Workshop",
+   "date": "2026-11-07",
+   "time": "10:00",
+   "url": "https://pioneersquare.org/our-events/glass-portrait-workshop/",
+   "type": "community"
+  },
+  {
+   "venue": "Klondike Gold Rush NHP",
+   "title": "Living Voices: Native Vision",
+   "date": "2026-11-07",
+   "time": "13:00",
+   "url": "https://www.nps.gov/planyourvisit/event-details.htm?id=138080",
+   "type": "community"
+  },
+  {
+   "venue": "Around Pioneer Square",
+   "title": "Peony Princess Mini-Concert: Happily Ever After",
+   "date": "2026-11-07",
+   "time": "13:30",
+   "url": "https://pioneersquare.org/our-events/peony-princess-mini-concert-happily-ever-after/",
+   "type": "community"
+  },
+  {
+   "venue": "Around Pioneer Square",
+   "title": "Peony Princess Mini-Concert: Happily Ever After",
+   "date": "2026-11-07",
+   "time": "14:30",
+   "url": "https://pioneersquare.org/our-events/peony-princess-mini-concert-happily-ever-after-2/",
+   "type": "community"
+  },
+  {
+   "venue": "Waterfront Park",
+   "title": "Waterfront Park Firepit Socials",
+   "date": "2026-11-07",
+   "time": "15:00",
+   "url": "https://waterfrontparkseattle.org/blog/event/waterfront-park-firepit-socials/?date=202611071500",
+   "type": "community"
+  },
+  {
+   "venue": "Around Pioneer Square",
+   "title": "Artist Reception – Sarah Barnett, Matthew Behrend, Marcus Lelle",
+   "date": "2026-11-07",
+   "time": "16:00",
+   "url": "https://pioneersquare.org/our-events/artist-reception-sarah-barnett-matthew-behrend-marcus-lelle/",
+   "type": "community"
+  },
+  {
+   "venue": "Lumen Field",
+   "title": "Seattle Sounders FC vs. Los Angeles Football Club",
+   "date": "2026-11-07",
+   "time": "16:00:00",
+   "url": "https://www.ticketmaster.com/seattle-sounders-fc-vs-los-angeles-seattle-washington-11-07-2026/event/0F006383C3AA8409",
+   "type": "sports"
+  },
+  {
+   "venue": "Baba Obscura",
+   "type": "concert",
+   "url": "https://babaobscura.com/schedule",
+   "date": "2026-11-07",
+   "time": "17:00",
+   "title": "Provoker, Black Mountain",
+   "lineup": [
+    "Melts",
+    "SUX",
+    "Little Venom",
+    "Linda From Work",
+    "Mikey Moo",
+    "Alex E.T.",
+    "The Shivas",
+    "Zailee Haze",
+    "Nathan Nothing",
+    "Kadabra",
+    "So Pitted",
+    "Brent Amaker and the Rodeo",
+    "The Drags",
+    "Sugar Candy Mountain",
+    "The Grizzled Mighty",
+    "Federale",
+    "The Spyrals",
+    "The Gories",
+    "Dark Chisme",
+    "The Intelligence",
+    "Black Mountain",
+    "Strawberry Fuzz",
+    "The Black Tones",
+    "Zookraught",
+    "Provoker",
+    "Orquesta Pacífico Tropical"
+   ],
+   "sets": [
+    {
+     "stage": "Baba Yaga Up",
+     "acts": [
+      {
+       "act": "Melts",
+       "start": "17:00",
+       "end": "17:35"
+      },
+      {
+       "act": "Linda From Work",
+       "start": "18:15",
+       "end": "18:50"
+      },
+      {
+       "act": "Kadabra",
+       "start": "19:45",
+       "end": "20:15"
+      },
+      {
+       "act": "The Grizzled Mighty",
+       "start": "21:05",
+       "end": "21:45"
+      },
+      {
+       "act": "Black Mountain",
+       "start": "22:45",
+       "end": "23:50"
+      },
+      {
+       "act": "Orquesta Pacífico Tropical",
+       "start": "00:00",
+       "end": "01:00"
+      }
+     ]
+    },
+    {
+     "stage": "Central Saloon",
+     "acts": [
+      {
+       "act": "SUX",
+       "start": "17:20",
+       "end": "18:00"
+      },
+      {
+       "act": "Mikey Moo",
+       "start": "18:15",
+       "end": "18:50"
+      },
+      {
+       "act": "Zailee Haze",
+       "start": "19:10",
+       "end": "19:50"
+      },
+      {
+       "act": "Brent Amaker and the Rodeo",
+       "start": "20:10",
+       "end": "20:55"
+      },
+      {
+       "act": "Federale",
+       "start": "21:25",
+       "end": "22:10"
+      },
+      {
+       "act": "The Intelligence",
+       "start": "22:35",
+       "end": "23:20"
+      },
+      {
+       "act": "The Black Tones",
+       "start": "23:30",
+       "end": "00:15"
+      }
+     ]
+    },
+    {
+     "stage": "Baba Yaga Down",
+     "acts": [
+      {
+       "act": "Little Venom",
+       "start": "17:40",
+       "end": "18:15"
+      },
+      {
+       "act": "The Shivas",
+       "start": "18:50",
+       "end": "19:30"
+      },
+      {
+       "act": "The Drags",
+       "start": "20:25",
+       "end": "21:10"
+      },
+      {
+       "act": "The Gories",
+       "start": "21:50",
+       "end": "22:40"
+      },
+      {
+       "act": "Zookraught",
+       "start": "23:35",
+       "end": "00:35"
+      }
+     ]
+    },
+    {
+     "stage": "Axis North",
+     "acts": [
+      {
+       "act": "Alex E.T.",
+       "start": "18:40",
+       "end": "19:20"
+      },
+      {
+       "act": "So Pitted",
+       "start": "20:05",
+       "end": "20:45"
+      },
+      {
+       "act": "The Spyrals",
+       "start": "21:30",
+       "end": "22:10"
+      },
+      {
+       "act": "Strawberry Fuzz",
+       "start": "23:05",
+       "end": "00:00"
+      }
+     ]
+    },
+    {
+     "stage": "Axis South",
+     "acts": [
+      {
+       "act": "Nathan Nothing",
+       "start": "19:20",
+       "end": "20:00"
+      },
+      {
+       "act": "Sugar Candy Mountain",
+       "start": "20:40",
+       "end": "21:25"
+      },
+      {
+       "act": "Dark Chisme",
+       "start": "22:15",
+       "end": "23:00"
+      },
+      {
+       "act": "Provoker",
+       "start": "00:00",
+       "end": "01:00"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "venue": "Baba Yaga",
+   "type": "concert",
+   "url": "https://babaobscura.com/tickets",
+   "date": "2026-11-07",
+   "time": "17:00",
+   "end": "17:35",
+   "title": "Melts",
+   "stage": "Baba Obscura · Up stage",
+   "set": true
+  },
+  {
+   "venue": "Central Saloon",
+   "type": "concert",
+   "url": "https://babaobscura.com/tickets",
+   "date": "2026-11-07",
+   "time": "17:20",
+   "end": "18:00",
+   "title": "SUX",
+   "stage": "Baba Obscura",
+   "set": true
+  },
+  {
+   "venue": "Baba Yaga",
+   "type": "concert",
+   "url": "https://babaobscura.com/tickets",
+   "date": "2026-11-07",
+   "time": "17:40",
+   "end": "18:15",
+   "title": "Little Venom",
+   "stage": "Baba Obscura · Down stage",
+   "set": true
+  },
+  {
+   "venue": "Baba Yaga",
+   "type": "concert",
+   "url": "https://babaobscura.com/tickets",
+   "date": "2026-11-07",
+   "time": "18:15",
+   "end": "18:50",
+   "title": "Linda From Work",
+   "stage": "Baba Obscura · Up stage",
+   "set": true
+  },
+  {
+   "venue": "Central Saloon",
+   "type": "concert",
+   "url": "https://babaobscura.com/tickets",
+   "date": "2026-11-07",
+   "time": "18:15",
+   "end": "18:50",
+   "title": "Mikey Moo",
+   "stage": "Baba Obscura",
+   "set": true
+  },
+  {
+   "venue": "Axis Pioneer Square",
+   "type": "concert",
+   "url": "https://babaobscura.com/tickets",
+   "date": "2026-11-07",
+   "time": "18:40",
+   "end": "19:20",
+   "title": "Alex E.T.",
+   "stage": "Baba Obscura · North stage",
+   "set": true
+  },
+  {
+   "venue": "Baba Yaga",
+   "type": "concert",
+   "url": "https://babaobscura.com/tickets",
+   "date": "2026-11-07",
+   "time": "18:50",
+   "end": "19:30",
+   "title": "The Shivas",
+   "stage": "Baba Obscura · Down stage",
+   "set": true
+  },
+  {
+   "venue": "WAMU Theater",
+   "title": "Sammy Virji: North America Tour 2026 Part Two",
+   "date": "2026-11-07",
+   "time": "19:00:00",
+   "url": "https://www.ticketmaster.com/sammy-virji-north-america-tour-2026-seattle-washington-11-07-2026/event/0F0064EAC9F9C68F",
+   "type": "concert"
+  },
+  {
+   "venue": "Central Saloon",
+   "type": "concert",
+   "url": "https://babaobscura.com/tickets",
+   "date": "2026-11-07",
+   "time": "19:10",
+   "end": "19:50",
+   "title": "Zailee Haze",
+   "stage": "Baba Obscura",
+   "set": true
+  },
+  {
+   "venue": "Axis Pioneer Square",
+   "type": "concert",
+   "url": "https://babaobscura.com/tickets",
+   "date": "2026-11-07",
+   "time": "19:20",
+   "end": "20:00",
+   "title": "Nathan Nothing",
+   "stage": "Baba Obscura · South stage",
+   "set": true
+  },
+  {
+   "venue": "Seattle Jazz Fellowship",
+   "title": "Ray Larsen",
+   "date": "2026-11-07",
+   "time": "19:30",
+   "url": "https://seattlejazzfellowship.org/events/mnljy9prmd393lt-6bsrx",
+   "type": "concert"
+  },
+  {
+   "venue": "Baba Yaga",
+   "type": "concert",
+   "url": "https://babaobscura.com/tickets",
+   "date": "2026-11-07",
+   "time": "19:45",
+   "end": "20:15",
+   "title": "Kadabra",
+   "stage": "Baba Obscura · Up stage",
+   "set": true
+  },
+  {
+   "venue": "Axis Pioneer Square",
+   "type": "concert",
+   "url": "https://babaobscura.com/tickets",
+   "date": "2026-11-07",
+   "time": "20:05",
+   "end": "20:45",
+   "title": "So Pitted",
+   "stage": "Baba Obscura · North stage",
+   "set": true
+  },
+  {
+   "venue": "Central Saloon",
+   "type": "concert",
+   "url": "https://babaobscura.com/tickets",
+   "date": "2026-11-07",
+   "time": "20:10",
+   "end": "20:55",
+   "title": "Brent Amaker and the Rodeo",
+   "stage": "Baba Obscura",
+   "set": true
+  },
+  {
+   "venue": "Baba Yaga",
+   "type": "concert",
+   "url": "https://babaobscura.com/tickets",
+   "date": "2026-11-07",
+   "time": "20:25",
+   "end": "21:10",
+   "title": "The Drags",
+   "stage": "Baba Obscura · Down stage",
+   "set": true
+  },
+  {
+   "venue": "Axis Pioneer Square",
+   "type": "concert",
+   "url": "https://babaobscura.com/tickets",
+   "date": "2026-11-07",
+   "time": "20:40",
+   "end": "21:25",
+   "title": "Sugar Candy Mountain",
+   "stage": "Baba Obscura · South stage",
+   "set": true
+  },
+  {
+   "venue": "Baba Yaga",
+   "type": "concert",
+   "url": "https://babaobscura.com/tickets",
+   "date": "2026-11-07",
+   "time": "21:05",
+   "end": "21:45",
+   "title": "The Grizzled Mighty",
+   "stage": "Baba Obscura · Up stage",
+   "set": true
+  },
+  {
+   "venue": "Central Saloon",
+   "type": "concert",
+   "url": "https://babaobscura.com/tickets",
+   "date": "2026-11-07",
+   "time": "21:25",
+   "end": "22:10",
+   "title": "Federale",
+   "stage": "Baba Obscura",
+   "set": true
+  },
+  {
+   "venue": "Axis Pioneer Square",
+   "type": "concert",
+   "url": "https://babaobscura.com/tickets",
+   "date": "2026-11-07",
+   "time": "21:30",
+   "end": "22:10",
+   "title": "The Spyrals",
+   "stage": "Baba Obscura · North stage",
+   "set": true
+  },
+  {
+   "venue": "Baba Yaga",
+   "type": "concert",
+   "url": "https://babaobscura.com/tickets",
+   "date": "2026-11-07",
+   "time": "21:50",
+   "end": "22:40",
+   "title": "The Gories",
+   "stage": "Baba Obscura · Down stage",
+   "set": true
+  },
+  {
+   "venue": "Trinity Nightclub",
+   "title": "Reload Saturdays at Trinity • Entertaining Seattle's Dance Community",
+   "date": "2026-11-07",
+   "time": "22:00",
+   "url": "https://www.eventbrite.com/e/reload-saturdays-at-trinity-entertaining-seattles-dance-community-tickets-1997645134372",
+   "type": "concert"
+  },
+  {
+   "venue": "Axis Pioneer Square",
+   "type": "concert",
+   "url": "https://babaobscura.com/tickets",
+   "date": "2026-11-07",
+   "time": "22:15",
+   "end": "23:00",
+   "title": "Dark Chisme",
+   "stage": "Baba Obscura · South stage",
+   "set": true
+  },
+  {
+   "venue": "Central Saloon",
+   "type": "concert",
+   "url": "https://babaobscura.com/tickets",
+   "date": "2026-11-07",
+   "time": "22:35",
+   "end": "23:20",
+   "title": "The Intelligence",
+   "stage": "Baba Obscura",
+   "set": true
+  },
+  {
+   "venue": "Baba Yaga",
+   "type": "concert",
+   "url": "https://babaobscura.com/tickets",
+   "date": "2026-11-07",
+   "time": "22:45",
+   "end": "23:50",
+   "title": "Black Mountain",
+   "stage": "Baba Obscura · Up stage",
+   "set": true
+  },
+  {
+   "venue": "Axis Pioneer Square",
+   "type": "concert",
+   "url": "https://babaobscura.com/tickets",
+   "date": "2026-11-07",
+   "time": "23:05",
+   "end": "00:00",
+   "title": "Strawberry Fuzz",
+   "stage": "Baba Obscura · North stage",
+   "set": true
+  },
+  {
+   "venue": "Central Saloon",
+   "type": "concert",
+   "url": "https://babaobscura.com/tickets",
+   "date": "2026-11-07",
+   "time": "23:30",
+   "end": "00:15",
+   "title": "The Black Tones",
+   "stage": "Baba Obscura",
+   "set": true
+  },
+  {
+   "venue": "Baba Yaga",
+   "type": "concert",
+   "url": "https://babaobscura.com/tickets",
+   "date": "2026-11-07",
+   "time": "23:35",
+   "end": "00:35",
+   "title": "Zookraught",
+   "stage": "Baba Obscura · Down stage",
+   "set": true
   }
  ]
 }
