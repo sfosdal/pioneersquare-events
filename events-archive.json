@@ -2337,6 +2337,202 @@
    "title": "Zookraught",
    "stage": "Baba Obscura · Down stage",
    "set": true
+  },
+  {
+   "venue": "Axis Pioneer Square",
+   "type": "concert",
+   "url": "https://babaobscura.com/tickets",
+   "date": "2026-11-08",
+   "time": "00:00",
+   "end": "01:00",
+   "title": "Provoker",
+   "stage": "Baba Obscura · South stage",
+   "set": true
+  },
+  {
+   "venue": "Baba Yaga",
+   "type": "concert",
+   "url": "https://babaobscura.com/tickets",
+   "date": "2026-11-08",
+   "time": "00:00",
+   "end": "01:00",
+   "title": "Orquesta Pacífico Tropical",
+   "stage": "Baba Obscura · Up stage",
+   "set": true
+  },
+  {
+   "venue": "Waterfront Park",
+   "title": "Railroad Way Game Day Activations",
+   "date": "2026-11-08",
+   "time": "10:00",
+   "url": "https://waterfrontparkseattle.org/blog/event/railroad-way-game-day-activations/?date=202611081000",
+   "type": "community"
+  },
+  {
+   "venue": "Lumen Field",
+   "title": "Seattle Seahawks vs. Arizona Cardinals",
+   "date": "2026-11-08",
+   "time": "13:25:00",
+   "url": "https://www.ticketmaster.com/seattle-seahawks-vs-arizona-cardinals-seattle-washington-11-08-2026/event/0F006482E68374A4",
+   "type": "sports",
+   "watch": {
+    "tv": [
+     "Fox"
+    ]
+   }
+  },
+  {
+   "venue": "Waterfront Park",
+   "title": "Waterfront Park Firepit Socials",
+   "date": "2026-11-08",
+   "time": "15:00",
+   "url": "https://waterfrontparkseattle.org/blog/event/waterfront-park-firepit-socials/?date=202611081500",
+   "type": "community"
+  },
+  {
+   "venue": "Baba Obscura",
+   "type": "concert",
+   "url": "https://babaobscura.com/schedule",
+   "date": "2026-11-08",
+   "time": "15:00",
+   "title": "The Black Angels",
+   "lineup": [
+    "Jewel Loree DJ Set",
+    "Brute",
+    "Roy G. Biv",
+    "Monsterwatch",
+    "Ghostwoman",
+    "Noches de Rock After Party",
+    "The Black Angels"
+   ],
+   "sets": [
+    {
+     "stage": "Baba Yaga Up",
+     "acts": [
+      {
+       "act": "Jewel Loree DJ Set",
+       "start": "15:00",
+       "end": "17:00"
+      }
+     ]
+    },
+    {
+     "stage": "Baba Yaga Down",
+     "acts": [
+      {
+       "act": "Brute",
+       "start": "17:15",
+       "end": "17:50"
+      },
+      {
+       "act": "Roy G. Biv",
+       "start": "18:05",
+       "end": "18:45"
+      },
+      {
+       "act": "Monsterwatch",
+       "start": "19:00",
+       "end": "20:00"
+      },
+      {
+       "act": "Noches de Rock After Party",
+       "start": "20:30",
+       "end": "00:40"
+      }
+     ]
+    },
+    {
+     "stage": "Showbox at the Market",
+     "acts": [
+      {
+       "act": "Ghostwoman",
+       "start": "20:15",
+       "end": "21:15"
+      },
+      {
+       "act": "The Black Angels",
+       "start": "21:35",
+       "end": "22:35"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "venue": "Baba Yaga",
+   "type": "concert",
+   "url": "https://babaobscura.com/tickets",
+   "date": "2026-11-08",
+   "time": "15:00",
+   "end": "17:00",
+   "title": "Jewel Loree DJ Set",
+   "stage": "Baba Obscura · Up stage",
+   "set": true
+  },
+  {
+   "venue": "Central Saloon",
+   "title": "Seahawks vs Cardinals Afterparty w/ Eel Sallad",
+   "date": "2026-11-08",
+   "time": "17:00",
+   "url": "https://centralsaloon.com/events/seahawks-vs-cardinals-afterparty-w-eel-sallad/",
+   "type": "concert",
+   "watch": {
+    "tv": [
+     "Fox"
+    ]
+   }
+  },
+  {
+   "venue": "Baba Yaga",
+   "type": "concert",
+   "url": "https://babaobscura.com/tickets",
+   "date": "2026-11-08",
+   "time": "17:15",
+   "end": "17:50",
+   "title": "Brute",
+   "stage": "Baba Obscura · Down stage",
+   "set": true
+  },
+  {
+   "venue": "Baba Yaga",
+   "type": "concert",
+   "url": "https://babaobscura.com/tickets",
+   "date": "2026-11-08",
+   "time": "18:05",
+   "end": "18:45",
+   "title": "Roy G. Biv",
+   "stage": "Baba Obscura · Down stage",
+   "set": true
+  },
+  {
+   "venue": "Baba Yaga",
+   "type": "concert",
+   "url": "https://babaobscura.com/tickets",
+   "date": "2026-11-08",
+   "time": "19:00",
+   "end": "20:00",
+   "title": "Monsterwatch",
+   "stage": "Baba Obscura · Down stage",
+   "set": true
+  },
+  {
+   "venue": "Baba Yaga",
+   "type": "concert",
+   "url": "https://babaobscura.com/tickets",
+   "date": "2026-11-08",
+   "time": "20:30",
+   "end": "00:40",
+   "title": "Noches de Rock After Party",
+   "stage": "Baba Obscura · Down stage",
+   "set": true
+  },
+  {
+   "venue": "Baba Yaga",
+   "title": "Noches de Rock",
+   "date": "2026-11-08",
+   "time": "21:00",
+   "url": "https://ma.to/event/noches-de-rock-08-nov-2026",
+   "type": "concert"
   }
  ]
 }
