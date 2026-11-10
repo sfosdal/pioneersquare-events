@@ -2533,6 +2533,30 @@
    "time": "21:00",
    "url": "https://ma.to/event/noches-de-rock-08-nov-2026",
    "type": "concert"
+  },
+  {
+   "venue": "Owl 'n Thistle",
+   "title": "Aqualizer",
+   "date": "2026-11-09",
+   "time": "",
+   "url": "https://owlnthistle.com/live-music-schedule",
+   "type": "concert"
+  },
+  {
+   "venue": "Central Saloon",
+   "title": "Askysoblack • O Miles Per Hour • Commoner • Bonney Rubble",
+   "date": "2026-11-09",
+   "time": "19:00",
+   "url": "https://centralsaloon.com/events/askysoblack-o-miles-per-hour-commoner-bonny-rubble/",
+   "type": "concert"
+  },
+  {
+   "venue": "Seattle Jazz Fellowship",
+   "title": "Fellowship Jam Session",
+   "date": "2026-11-09",
+   "time": "19:30",
+   "url": "https://seattlejazzfellowship.org/events/fellowship-jam-session-wd2l6-yynsx-r7xsj-rne75-nfkxk-nj5nl-k9lrz",
+   "type": "concert"
   }
  ]
 }
