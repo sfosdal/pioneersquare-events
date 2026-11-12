@@ -2597,6 +2597,30 @@
    "time": "20:00",
    "url": "https://ma.to/event/james-ivy-with-harry-teardrop-10-nov-2026",
    "type": "concert"
+  },
+  {
+   "venue": "Around Pioneer Square",
+   "title": "The Hearth",
+   "date": "2026-11-11",
+   "time": "18:00",
+   "url": "https://pioneersquare.org/our-events/the-hearth/",
+   "type": "community"
+  },
+  {
+   "venue": "Central Saloon",
+   "title": "Matt Unger – Record Release Party! w/ 4UST • FarReaches",
+   "date": "2026-11-11",
+   "time": "19:00",
+   "url": "https://centralsaloon.com/events/matt-unger-record-release-party/",
+   "type": "concert"
+  },
+  {
+   "venue": "Baba Yaga",
+   "title": "Disposable Parts",
+   "date": "2026-11-11",
+   "time": "20:00",
+   "url": "https://ma.to/event/disposable-parts-11-nov-2026",
+   "type": "concert"
   }
  ]
 }
