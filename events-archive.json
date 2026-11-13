@@ -2621,6 +2621,54 @@
    "time": "20:00",
    "url": "https://ma.to/event/disposable-parts-11-nov-2026",
    "type": "concert"
+  },
+  {
+   "venue": "Owl 'n Thistle",
+   "title": "Danny Godinez",
+   "date": "2026-11-12",
+   "time": "",
+   "url": "https://owlnthistle.com/live-music-schedule",
+   "type": "concert"
+  },
+  {
+   "venue": "Around Pioneer Square",
+   "title": "Second Thursday: Live Music Lunch Hour with The Marco de Carvalho Trio featuring Hans Teuber and Jeff Busch",
+   "date": "2026-11-12",
+   "time": "12:00",
+   "url": "https://pioneersquare.org/our-events/second-thursday-live-music-lunch-hour-with-the-marco-de-carvalho-trio-featuring-hans-teuber-and-jeff-busch/",
+   "type": "community"
+  },
+  {
+   "venue": "Central Saloon",
+   "title": "Black Nite Crash + Glass Rabbit + Sam Cobra",
+   "date": "2026-11-12",
+   "time": "19:00",
+   "url": "https://centralsaloon.com/events/sam-cobra-glass-rabbit/",
+   "type": "concert"
+  },
+  {
+   "venue": "Seattle Jazz Fellowship",
+   "title": "Thomas Marriott",
+   "date": "2026-11-12",
+   "time": "19:30",
+   "url": "https://seattlejazzfellowship.org/events/mnljy9prmd393lt-6bsrx-kwk7l",
+   "type": "concert"
+  },
+  {
+   "venue": "Baba Yaga",
+   "title": "Boys in Blush",
+   "date": "2026-11-12",
+   "time": "20:00",
+   "url": "https://ma.to/event/boys-in-blush-12-nov-2026",
+   "type": "concert"
+  },
+  {
+   "venue": "Trinity Nightclub",
+   "title": "Y2K Thursdays At Trinity- Seattle’s #1 Thursday Night Party",
+   "date": "2026-11-12",
+   "time": "22:00",
+   "url": "https://www.eventbrite.com/e/y2k-thursdays-at-trinity-seattles-1-thursday-night-party-tickets-1998022910310",
+   "type": "concert"
   }
  ]
 }
