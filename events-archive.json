@@ -2669,6 +2669,93 @@
    "time": "22:00",
    "url": "https://www.eventbrite.com/e/y2k-thursdays-at-trinity-seattles-1-thursday-night-party-tickets-1998022910310",
    "type": "concert"
+  },
+  {
+   "venue": "Owl 'n Thistle",
+   "title": "Irish Cover Band",
+   "date": "2026-11-13",
+   "time": "",
+   "url": "https://owlnthistle.com/live-music-schedule",
+   "type": "concert"
+  },
+  {
+   "venue": "Around Pioneer Square",
+   "title": "Friday the 13th: Yoga with Nancy Nomellini from Mother Yoga Studio",
+   "date": "2026-11-13",
+   "time": "10:00",
+   "url": "https://pioneersquare.org/our-events/friday-the-13th-yoga-with-nancy-nomellini-from-mother-yoga-studio/",
+   "type": "community"
+  },
+  {
+   "venue": "Around Pioneer Square",
+   "title": "Friday the 13th at Mama Bird Tattoo",
+   "date": "2026-11-13",
+   "time": "11:00",
+   "url": "https://pioneersquare.org/our-events/friday-the-13th-at-mama-bird-tattoo/",
+   "type": "community"
+  },
+  {
+   "venue": "Waterfront Park",
+   "title": "Dinner with Friends",
+   "date": "2026-11-13",
+   "time": "17:30",
+   "url": "https://waterfrontparkseattle.org/blog/event/dinner-with-friends-2026/?date=202611131730",
+   "type": "community"
+  },
+  {
+   "venue": "Around Pioneer Square",
+   "title": "Afroditi Psarra: Pythia Embodied (Artist Talk)",
+   "date": "2026-11-13",
+   "time": "18:00",
+   "url": "https://pioneersquare.org/our-events/afroditi-psarra-pythia-embodied-artist-talk/",
+   "type": "community"
+  },
+  {
+   "venue": "Central Saloon",
+   "title": "Mutual Shock • Atomic Pines • Manwoman",
+   "date": "2026-11-13",
+   "time": "19:30",
+   "url": "https://centralsaloon.com/events/mutual-shock-atomic-pines-manwoman/",
+   "type": "concert"
+  },
+  {
+   "venue": "Seattle Jazz Fellowship",
+   "title": "Cory Weeds",
+   "date": "2026-11-13",
+   "time": "19:30",
+   "url": "https://seattlejazzfellowship.org/events/mnljy9prmd393lt-6bsrx-kwk7l-7mkjh",
+   "type": "concert"
+  },
+  {
+   "venue": "Central Saloon",
+   "title": "Mutual Shock, Atomic Pines, and ManWoMan",
+   "date": "2026-11-13",
+   "time": "19:30",
+   "url": "https://pioneersquare.org/our-events/mutual-shock-atomic-pines-and-manwoman/",
+   "type": "community"
+  },
+  {
+   "venue": "Baba Yaga",
+   "title": "Holy Wave with Queen Serene",
+   "date": "2026-11-13",
+   "time": "20:00",
+   "url": "https://ma.to/event/holy-wave-with-queen-serene-13-nov-2026",
+   "type": "concert"
+  },
+  {
+   "venue": "Showbox SoDo",
+   "title": "nimino with Fletch",
+   "date": "2026-11-13",
+   "time": "20:00:00",
+   "url": "https://www.axs.com/events/1617000/nimino-tickets?skin=showboxpresents&src=AEGLIVE_WSHBXSEA030115VEN001"
+  },
+  {
+   "venue": "Trinity Nightclub",
+   "title": "Fridays at Trinity • Seattle's Biggest Party",
+   "date": "2026-11-13",
+   "time": "22:00",
+   "url": "https://www.eventbrite.com/e/fridays-at-trinity-seattles-biggest-party-tickets-1997644904685",
+   "type": "concert"
   }
  ]
 }
