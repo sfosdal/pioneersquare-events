@@ -2756,6 +2756,102 @@
    "time": "22:00",
    "url": "https://www.eventbrite.com/e/fridays-at-trinity-seattles-biggest-party-tickets-1997644904685",
    "type": "concert"
+  },
+  {
+   "venue": "Owl 'n Thistle",
+   "title": "Irish Cover Band",
+   "date": "2026-11-14",
+   "time": "",
+   "url": "https://owlnthistle.com/live-music-schedule",
+   "type": "concert"
+  },
+  {
+   "venue": "Around Pioneer Square",
+   "title": "Kindling: Bookbinding Workshop",
+   "date": "2026-11-14",
+   "time": "10:00",
+   "url": "https://pioneersquare.org/our-events/kindling-bookbinding-workshop/",
+   "type": "community"
+  },
+  {
+   "venue": "Around Pioneer Square",
+   "title": "Tony Angell Artist Talk",
+   "date": "2026-11-14",
+   "time": "13:00",
+   "url": "https://pioneersquare.org/our-events/tony-angell-artist-talk/",
+   "type": "community"
+  },
+  {
+   "venue": "Around Pioneer Square",
+   "title": "Meet Bulbasaur at Going Twice",
+   "date": "2026-11-14",
+   "time": "14:00",
+   "url": "https://pioneersquare.org/our-events/meet-bulbasaur-at-going-twice/",
+   "type": "community"
+  },
+  {
+   "venue": "Waterfront Park",
+   "title": "Waterfront Park Firepit Socials",
+   "date": "2026-11-14",
+   "time": "15:00",
+   "url": "https://waterfrontparkseattle.org/blog/event/waterfront-park-firepit-socials/?date=202611141500",
+   "type": "community"
+  },
+  {
+   "venue": "Around Pioneer Square",
+   "title": "Live Music: LaZzi",
+   "date": "2026-11-14",
+   "time": "15:00",
+   "url": "https://pioneersquare.org/our-events/live-music-lazzi/",
+   "type": "community"
+  },
+  {
+   "venue": "Around Pioneer Square",
+   "title": "🇮🇹⚽ Italian Foosball Tournament – Let The Games Begin! 🏆🔥",
+   "date": "2026-11-14",
+   "time": "16:00",
+   "url": "https://pioneersquare.org/our-events/%f0%9f%87%ae%f0%9f%87%b9%e2%9a%bd-italian-foosball-tournament-let-the-games-begin-%f0%9f%8f%86%f0%9f%94%a5/",
+   "type": "community"
+  },
+  {
+   "venue": "Central Saloon",
+   "title": "Dogstrum • Martyr Party • Hillside ’77",
+   "date": "2026-11-14",
+   "time": "19:00",
+   "url": "https://centralsaloon.com/events/martyr-party-hillside-77/",
+   "type": "concert"
+  },
+  {
+   "venue": "Baba Yaga",
+   "title": "Massy Ferguson, Tinsley & Tony",
+   "date": "2026-11-14",
+   "time": "19:00",
+   "url": "https://ma.to/event/massy-ferguson-at-baba-yaga-14-nov-2026",
+   "type": "concert"
+  },
+  {
+   "venue": "Seattle Jazz Fellowship",
+   "title": "Ben Black",
+   "date": "2026-11-14",
+   "time": "19:30",
+   "url": "https://seattlejazzfellowship.org/events/mnljy9prmd393lt-6bsrx-kwk7l-7mkjh-pnhfw",
+   "type": "concert"
+  },
+  {
+   "venue": "Baba Yaga",
+   "title": "Massy Ferguson (21+ Event)",
+   "date": "2026-11-14",
+   "time": "19:30:00",
+   "url": "https://babayagaseattle.com/",
+   "type": "concert"
+  },
+  {
+   "venue": "Trinity Nightclub",
+   "title": "Reload Saturdays at Trinity • Entertaining Seattle's Dance Community",
+   "date": "2026-11-14",
+   "time": "22:00",
+   "url": "https://www.eventbrite.com/e/reload-saturdays-at-trinity-entertaining-seattles-dance-community-tickets-1997645163459",
+   "type": "concert"
   }
  ]
 }
