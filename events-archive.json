@@ -2852,6 +2852,37 @@
    "time": "22:00",
    "url": "https://www.eventbrite.com/e/reload-saturdays-at-trinity-entertaining-seattles-dance-community-tickets-1997645163459",
    "type": "concert"
+  },
+  {
+   "venue": "Waterfront Park",
+   "title": "Waterfront Park Firepit Socials",
+   "date": "2026-11-15",
+   "time": "15:00",
+   "url": "https://waterfrontparkseattle.org/blog/event/waterfront-park-firepit-socials/?date=202611151500",
+   "type": "community"
+  },
+  {
+   "venue": "Central Saloon",
+   "title": "Eve’s Black Heart • Shadowhouse • Glitt",
+   "date": "2026-11-15",
+   "time": "19:00",
+   "url": "https://centralsaloon.com/events/glitt-the-palace-of-tears-eves-black-heart-girls-in-a-car/",
+   "type": "concert"
+  },
+  {
+   "venue": "Showbox SoDo",
+   "title": "BOYNEXTDOOR",
+   "date": "2026-11-15",
+   "time": "19:30:00",
+   "url": "https://www.axs.com/events/1477898/boynextdoor-tickets?skin=showboxpresents&src=AEGLIVE_WSHBXSEA030115VEN001"
+  },
+  {
+   "venue": "Baba Yaga",
+   "title": "Jena von Jupiter",
+   "date": "2026-11-15",
+   "time": "20:00",
+   "url": "https://ma.to/event/jena-von-jupiter-15-nov-2026",
+   "type": "concert"
   }
  ]
 }
