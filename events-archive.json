@@ -2883,6 +2883,45 @@
    "time": "20:00",
    "url": "https://ma.to/event/jena-von-jupiter-15-nov-2026",
    "type": "concert"
+  },
+  {
+   "venue": "Owl 'n Thistle",
+   "title": "Aqualizer",
+   "date": "2026-11-16",
+   "time": "",
+   "url": "https://owlnthistle.com/live-music-schedule",
+   "type": "concert"
+  },
+  {
+   "venue": "Central Saloon",
+   "title": "Lovely Colours + Chairs For Giants // Band In Seattle – Live Taping!",
+   "date": "2026-11-16",
+   "time": "18:00",
+   "url": "https://centralsaloon.com/events/band-in-seattle-season-12/",
+   "type": "concert"
+  },
+  {
+   "venue": "Showbox SoDo",
+   "title": "Story of the Year & Silverstein with Stand Atlantic and Footballhead",
+   "date": "2026-11-16",
+   "time": "19:00:00",
+   "url": "https://www.axs.com/events/1534964/story-of-the-year-silverstein-tickets?skin=showboxpresents&src=AEGLIVE_WSHBXSEA030115VEN001"
+  },
+  {
+   "venue": "Seattle Jazz Fellowship",
+   "title": "Fellowship Jam Session",
+   "date": "2026-11-16",
+   "time": "19:30",
+   "url": "https://seattlejazzfellowship.org/events/fellowship-jam-session-wd2l6-yynsx-r7xsj-rne75-nfkxk-nj5nl-yjrs9",
+   "type": "concert"
+  },
+  {
+   "venue": "Baba Yaga",
+   "title": "Denise Jvlia",
+   "date": "2026-11-16",
+   "time": "20:00",
+   "url": "https://ma.to/event/denise-jvlia-16-nov-2026",
+   "type": "concert"
   }
  ]
 }
