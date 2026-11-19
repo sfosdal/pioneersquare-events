@@ -2960,6 +2960,37 @@
    "date": "2026-11-17",
    "time": "20:00:00",
    "url": "https://www.axs.com/events/1479406/bonobo-tickets?skin=showboxpresents&src=AEGLIVE_WSHBXSEA030115VEN001"
+  },
+  {
+   "venue": "Central Saloon",
+   "title": "Diving Board + 3rd On Pike",
+   "date": "2026-11-18",
+   "time": "19:00",
+   "url": "https://centralsaloon.com/events/diving-board-3rd-on-pike-2/",
+   "type": "concert"
+  },
+  {
+   "venue": "Baba Yaga",
+   "title": "Poysenberry, Living With A Bear",
+   "date": "2026-11-18",
+   "time": "19:00",
+   "url": "https://ma.to/event/poysenberry-live-at-baba-yaga-2026-11-18",
+   "type": "concert"
+  },
+  {
+   "venue": "Seattle Jazz Fellowship",
+   "title": "Sarah Hanahan",
+   "date": "2026-11-18",
+   "time": "19:30",
+   "url": "https://seattlejazzfellowship.org/events/mnljy9prmd393lt-6bsrx-kwk7l-7mkjh-pnhfw-a3xtn-y4579",
+   "type": "concert"
+  },
+  {
+   "venue": "Showbox SoDo",
+   "title": "KINO",
+   "date": "2026-11-18",
+   "time": "20:00:00",
+   "url": "https://www.axs.com/events/1405847/kino-tickets?skin=showboxpresents&src=AEGLIVE_WSHBXSEA030115VEN001"
   }
  ]
 }
