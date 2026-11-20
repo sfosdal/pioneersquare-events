@@ -2991,6 +2991,54 @@
    "date": "2026-11-18",
    "time": "20:00:00",
    "url": "https://www.axs.com/events/1405847/kino-tickets?skin=showboxpresents&src=AEGLIVE_WSHBXSEA030115VEN001"
+  },
+  {
+   "venue": "Owl 'n Thistle",
+   "title": "Danny Godinez",
+   "date": "2026-11-19",
+   "time": "",
+   "url": "https://owlnthistle.com/live-music-schedule",
+   "type": "concert"
+  },
+  {
+   "venue": "Central Saloon",
+   "title": "RESGIVING 2026",
+   "date": "2026-11-19",
+   "time": "18:00",
+   "url": "https://centralsaloon.com/events/resgiving-2026/",
+   "type": "concert"
+  },
+  {
+   "venue": "Around Pioneer Square",
+   "title": "Third Thursday: Life Drawing Session",
+   "date": "2026-11-19",
+   "time": "18:00",
+   "url": "https://pioneersquare.org/our-events/third-thursday-life-drawing-session-2/",
+   "type": "community"
+  },
+  {
+   "venue": "Lumen Field",
+   "title": "Seattle Sounders FC vs. Real Salt Lake",
+   "date": "2026-11-19",
+   "time": "19:00:00",
+   "url": "https://www.ticketmaster.com/seattle-sounders-fc-vs-real-salt-seattle-washington-11-19-2026/event/0F00654770402879",
+   "type": "sports"
+  },
+  {
+   "venue": "Seattle Jazz Fellowship",
+   "title": "Sidney Hauser",
+   "date": "2026-11-19",
+   "time": "19:30",
+   "url": "https://seattlejazzfellowship.org/events/mnljy9prmd393lt-6bsrx-kwk7l-7mkjh-pnhfw-a3xtn",
+   "type": "concert"
+  },
+  {
+   "venue": "Trinity Nightclub",
+   "title": "Y2K Thursdays At Trinity- Seattle’s #1 Thursday Night Party",
+   "date": "2026-11-19",
+   "time": "22:00",
+   "url": "https://www.eventbrite.com/e/y2k-thursdays-at-trinity-seattles-1-thursday-night-party-tickets-1998022928364",
+   "type": "concert"
   }
  ]
 }
