@@ -3039,6 +3039,53 @@
    "time": "22:00",
    "url": "https://www.eventbrite.com/e/y2k-thursdays-at-trinity-seattles-1-thursday-night-party-tickets-1998022928364",
    "type": "concert"
+  },
+  {
+   "venue": "Owl 'n Thistle",
+   "title": "Irish Cover Band",
+   "date": "2026-11-20",
+   "time": "",
+   "url": "https://owlnthistle.com/live-music-schedule",
+   "type": "concert"
+  },
+  {
+   "venue": "Around Pioneer Square",
+   "title": "Live Jazz: The Peck Jazz Trio",
+   "date": "2026-11-20",
+   "time": "16:00",
+   "url": "https://pioneersquare.org/our-events/live-jazz-the-peck-jazz-trio/",
+   "type": "community"
+  },
+  {
+   "venue": "Central Saloon",
+   "title": "FIKR – Seattle Hindi-Rock Live!",
+   "date": "2026-11-20",
+   "time": "19:30",
+   "url": "https://centralsaloon.com/events/fikr-seattle-hindi-rock-live/",
+   "type": "concert"
+  },
+  {
+   "venue": "Seattle Jazz Fellowship",
+   "title": "Victor Noriega",
+   "date": "2026-11-20",
+   "time": "19:30",
+   "url": "https://seattlejazzfellowship.org/events/mnljy9prmd393lt-6bsrx-kwk7l-7mkjh-pnhfw-a3xtn-h9zwp",
+   "type": "concert"
+  },
+  {
+   "venue": "Showbox SoDo",
+   "title": "Thundercat with fera",
+   "date": "2026-11-20",
+   "time": "20:00:00",
+   "url": "https://www.axs.com/events/1516580/thundercat-tickets?skin=showboxpresents&src=AEGLIVE_WSHBXSEA030115VEN001"
+  },
+  {
+   "venue": "Trinity Nightclub",
+   "title": "Fridays at Trinity • Seattle's Biggest Party",
+   "date": "2026-11-20",
+   "time": "22:00",
+   "url": "https://www.eventbrite.com/e/fridays-at-trinity-seattles-biggest-party-tickets-1997644978907",
+   "type": "concert"
   }
  ]
 }
