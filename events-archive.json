@@ -3086,6 +3086,70 @@
    "time": "22:00",
    "url": "https://www.eventbrite.com/e/fridays-at-trinity-seattles-biggest-party-tickets-1997644978907",
    "type": "concert"
+  },
+  {
+   "venue": "Owl 'n Thistle",
+   "title": "Irish Cover Band",
+   "date": "2026-11-21",
+   "time": "",
+   "url": "https://owlnthistle.com/live-music-schedule",
+   "type": "concert"
+  },
+  {
+   "venue": "Central Saloon",
+   "title": "Brawl Of The Wild: U of M Griz vs. Msu Bobcats",
+   "date": "2026-11-21",
+   "time": "10:00",
+   "url": "https://centralsaloon.com/events/brawl-of-the-wild-u-of-m-griz-vs-msu-bobcats/",
+   "type": "concert"
+  },
+  {
+   "venue": "Waterfront Park",
+   "title": "The Stories Water Keeps",
+   "date": "2026-11-21",
+   "time": "12:00",
+   "url": "https://waterfrontparkseattle.org/blog/event/the-stories-water-keeps/?date=202611211200",
+   "type": "community"
+  },
+  {
+   "venue": "Waterfront Park",
+   "title": "Waterfront Park Firepit Socials",
+   "date": "2026-11-21",
+   "time": "15:00",
+   "url": "https://waterfrontparkseattle.org/blog/event/waterfront-park-firepit-socials/?date=202611211500",
+   "type": "community"
+  },
+  {
+   "venue": "Around Pioneer Square",
+   "title": "Live Music: Michael Nicolella",
+   "date": "2026-11-21",
+   "time": "15:00",
+   "url": "https://pioneersquare.org/our-events/live-music-michael-nicolella/",
+   "type": "community"
+  },
+  {
+   "venue": "Central Saloon",
+   "title": "Sugar Of A Down (System Of A Down) • Falling Forever (Evanescence) • One-X (Three Days Grace)",
+   "date": "2026-11-21",
+   "time": "19:00",
+   "url": "https://centralsaloon.com/events/sugar-of-a-down-system-of-a-down-falling-forever-evanescence-one-x-three-days-grace/",
+   "type": "concert"
+  },
+  {
+   "venue": "Seattle Jazz Fellowship",
+   "title": "Matt Williams",
+   "date": "2026-11-21",
+   "time": "19:30",
+   "url": "https://seattlejazzfellowship.org/events/mnljy9prmd393lt-6bsrx-kwk7l-7mkjh-pnhfw-a3xtn-h9zwp-tzj6l",
+   "type": "concert"
+  },
+  {
+   "venue": "Trinity Nightclub",
+   "title": "Reload Saturdays at Trinity • Entertaining Seattle's Dance Community",
+   "date": "2026-11-21",
+   "time": "22:00",
+   "url": "https://www.eventbrite.com/e/reload-saturdays-at-trinity-entertaining-seattles-dance-community-tickets-1997645264762",
+   "type": "concert"
   }
  ]
 }
