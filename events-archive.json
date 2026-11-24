@@ -3174,6 +3174,29 @@
    "time": "18:00",
    "url": "https://centralsaloon.com/events/minikiss/",
    "type": "concert"
+  },
+  {
+   "venue": "Owl 'n Thistle",
+   "title": "Aqualizer",
+   "date": "2026-11-23",
+   "time": "",
+   "url": "https://owlnthistle.com/live-music-schedule",
+   "type": "concert"
+  },
+  {
+   "venue": "Seattle Jazz Fellowship",
+   "title": "Fellowship Jam Session",
+   "date": "2026-11-23",
+   "time": "19:30",
+   "url": "https://seattlejazzfellowship.org/events/fellowship-jam-session-wd2l6-yynsx-r7xsj-rne75-nfkxk-nj5nl-tp43f",
+   "type": "concert"
+  },
+  {
+   "venue": "Showbox SoDo",
+   "title": "GWAR with Midnight, Mac Sabbath, Nailed Shut",
+   "date": "2026-11-23",
+   "time": "19:45:00",
+   "url": "https://www.axs.com/events/1423219/gwar-tickets?skin=showboxpresents&src=AEGLIVE_WSHBXSEA030115VEN001"
   }
  ]
 }
