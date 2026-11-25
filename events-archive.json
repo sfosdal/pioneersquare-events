@@ -3197,6 +3197,37 @@
    "date": "2026-11-23",
    "time": "19:45:00",
    "url": "https://www.axs.com/events/1423219/gwar-tickets?skin=showboxpresents&src=AEGLIVE_WSHBXSEA030115VEN001"
+  },
+  {
+   "venue": "Owl 'n Thistle",
+   "title": "Jazz Jam — Seattle's longest-running jazz night",
+   "date": "2026-11-24",
+   "time": "",
+   "url": "https://owlnthistle.com/live-music-schedule",
+   "type": "concert"
+  },
+  {
+   "venue": "Central Saloon",
+   "title": "Industry Tuesday w/ The Red Permanence + Paned",
+   "date": "2026-11-24",
+   "time": "19:00",
+   "url": "https://centralsaloon.com/events/industry-tuesday/",
+   "type": "concert"
+  },
+  {
+   "venue": "Showbox SoDo",
+   "title": "SAOSIN with Silent Planet, Like Moths to Flames, and Save Us",
+   "date": "2026-11-24",
+   "time": "19:00:00",
+   "url": "https://www.axs.com/events/1433012/saosin-tickets?skin=showboxpresents&src=AEGLIVE_WSHBXSEA030115VEN001"
+  },
+  {
+   "venue": "Seattle Jazz Fellowship",
+   "title": "Julian Speaks",
+   "date": "2026-11-24",
+   "time": "19:30",
+   "url": "https://seattlejazzfellowship.org/events/julian-speaks-1-x254l",
+   "type": "concert"
   }
  ]
 }
