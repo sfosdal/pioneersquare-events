@@ -3236,6 +3236,22 @@
    "time": "22:00",
    "url": "https://www.eventbrite.com/e/black-wednesday-thanksgiving-pre-party-tickets-2004691375870",
    "type": "concert"
+  },
+  {
+   "venue": "Owl 'n Thistle",
+   "title": "Danny Godinez",
+   "date": "2026-11-26",
+   "time": "",
+   "url": "https://owlnthistle.com/live-music-schedule",
+   "type": "concert"
+  },
+  {
+   "venue": "Central Saloon",
+   "title": "Thanksgiving @ Central Saloon – We’re Open!",
+   "date": "2026-11-26",
+   "time": "11:00",
+   "url": "https://centralsaloon.com/events/thanksgiving-central-saloon-were-open/",
+   "type": "concert"
   }
  ]
 }
